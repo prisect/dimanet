@@ -12,8 +12,8 @@ threshold: all
 linear: CFLAGS += -Ddimanet_act=dimanet_act_linear
 linear: all
 
-test: test.o dimanet.o
-check: test
+debug: debug.o dimanet.o
+check: debug
 	./$^
 
 example1: examples/example_1.o dimanet.o
@@ -23,7 +23,7 @@ example4: examples/example_4.o dimanet.o
 
 clean:
 	$(RM) *.o
-	$(RM) test example_1 example_2 example_3 example_4 *.exe
+	$(RM) debug example_1 example_2 example_3 example_4 *.exe
 	$(RM) persist.txt
 
 .PHONY: sigmoid threshold linear clean
