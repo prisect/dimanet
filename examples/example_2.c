@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <math.h>
-#include "dimanet.h"
+#include "../dimanet.h"
 
 int main(int argc, char *argv[])
 {
