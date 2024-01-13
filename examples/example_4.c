@@ -3,7 +3,7 @@
 #include <time.h>
 #include <string.h>
 #include <math.h>
-#include "dimanet.h"
+#include "../dimanet.h"
 
 /* This example is to illustrate how to use dimanet.
  * It is NOT an example of good machine learning techniques.
