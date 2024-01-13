@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "dimanet.h"
+#include "../dimanet.h"
 
 const char *save_name = "example/xor.ann";
 
