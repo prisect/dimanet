@@ -1,26 +1,26 @@
 #ifdef __cplusplus
-#ifndef DIMANET_H
-#define DIMANET_H
+#ifndef dimanet_H
+#define dimanet_H
 
 #include <stdio.h>
 
 extern "C" {
 #endif
 
-#ifndef DIMANET_RANDOM
+#ifndef dimanet_RANDOM
 // using function to pick random numbers between 0 and 1
-#define DIMANET_RANDOM() (((double)rand())/RAND_MAX)
+#define dimanet_RANDOM() (((double)rand())/RAND_MAX)
 #endif
 
-struct DIMANET;
-typedef double (*DIMANET_actfun)(const struct DIMANET *ann, double a);
+struct dimanet;
+typedef double (*dimanet_actfun)(const struct dimanet *ann, double a);
 
-typedef struct DIMANET {
+typedef struct dimanet {
 
     int inputs, hidden_layers, hidden, outputs;
 
-    DIMANET_actfun activation_hidden;
-    DIMANET_actfun activation_output;
+    dimanet_actfun activation_hidden;
+    dimanet_actfun activation_output;
 
     // total number of weights and size of weights buffer
     int total_weights;
@@ -35,28 +35,28 @@ typedef struct DIMANET {
     // stores delta of each hidden and output neuron
     double *delta;
 
-} DIMANET;
+} dimanet;
 
-DIMANET *DIMANET_init(int inputs, int hidden_layers, int hidden, int outputs);
-DIMANET *DIMANET_read(FILE *in);
+dimanet *dimanet_init(int inputs, int hidden_layers, int hidden, int outputs);
+dimanet *dimanet_read(FILE *in);
 
-void DIMANET_randomize(DIMANET *ann);
-DIMANET *DIMANET_copy(DIMANET const *ann);
-void DIMANET_free(DIMANET *ann);
+void dimanet_randomize(dimanet *ann);
+dimanet *dimanet_copy(dimanet const *ann);
+void dimanet_free(dimanet *ann);
 
 // algorithm that calculates the ouput of ann
-double const *DIMANET_run(DIMANET const *ann, double const *inputs);
+double const *dimanet_run(dimanet const *ann, double const *inputs);
 
-void DIMANET_train(DIMANET const *ann, double const *inputs, double const *desired_outputs, double learning_rate);
-void DIMANET_write(DIMANET const *ann, FILE *out);
+void dimanet_train(dimanet const *ann, double const *inputs, double const *desired_outputs, double learning_rate);
+void dimanet_write(dimanet const *ann, FILE *out);
 
-void DIMANET_init_sigmoid_lookup(const DIMANET *ann);
-double DIMANET_act_sigmoid(const DIMANET *ann, double a);
-double DIMANET_act_sigmoid_cached(const DIMANET *ann, double a);
-double DIMANET_act_threshold(const DIMANET *ann, double a);
-double DIMANET_act_linear(const DIMANET *ann, double a);
+void dimanet_init_sigmoid_lookup(const dimanet *ann);
+double dimanet_act_sigmoid(const dimanet *ann, double a);
+double dimanet_act_sigmoid_cached(const dimanet *ann, double a);
+double dimanet_act_threshold(const dimanet *ann, double a);
+double dimanet_act_linear(const dimanet *ann, double a);
 
 #ifdef __cplusplus
 }
 #endif
-#endif // back to DIMANET_H ez
+#endif // back to dimanet_H ez
