@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include "dimanet.h"
+#include "../dimanet.h"
 
 int main(int argc, char *argv[])
 {
