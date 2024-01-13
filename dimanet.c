@@ -377,4 +377,3 @@ void dimanet_write(dimanet const *ann, FILE *out) {
     }
 }
 
-
