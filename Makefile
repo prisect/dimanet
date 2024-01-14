@@ -17,10 +17,10 @@ check: debug
 	./$^
 
 example1: examples/example_1.o dimanet.o
+	chmod +x examples/example_*.o  # Add this line to set execute permission for all example_*.o files
 example2: examples/example_2.o dimanet.o
 example3: examples/example_3.o dimanet.o
 example4: examples/example_4.o dimanet.o
-    chmod +x $@
 
 clean:
 	$(RM) *.o
