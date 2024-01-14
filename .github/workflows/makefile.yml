@@ -14,8 +14,8 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: make dimanet
+    - name: make dimanet # make, compile everything
       run: make
 
-    - name: debug
-      run: chmod +x debug.o && ./debug.o
+    - name: test example1 # might remove and put a example file for test
+      run: chmod +x examples/example_1.o && ./example_1.o
