@@ -1,5 +1,4 @@
-# DimaNet | ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/dimaaac/DimaNet/makefile.yml) ![GitHub last commit (branch)](https://img.shields.io/github/last-commit/dimaaac/DimaNet/main)
-
+# DimaNet | ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/dimaaac/DimaNet/makefile.yml) ![GitHub last commit](https://img.shields.io/github/last-commit/dimaaac/DimaNet)
 DimaNet serves as a compact, yet powerful library designed for the implementation and training of feedforward artificial neural networks (ANN) in the C programming language. Striving for simplicity, speed, reliability, and customization, DimaNet offers a lean set of essential functions, ensuring a clutter-free and efficient user experience.
 
 ## Building
