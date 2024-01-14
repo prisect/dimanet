@@ -1,4 +1,4 @@
-# DimaNet
+# DimaNet | ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/dimaaac/DimaNet/makefile.yml) ![GitHub last commit (branch)](https://img.shields.io/github/last-commit/dimaaac/DimaNet/main)
 
 DimaNet serves as a compact, yet powerful library designed for the implementation and training of feedforward artificial neural networks (ANN) in the C programming language. Striving for simplicity, speed, reliability, and customization, DimaNet offers a lean set of essential functions, ensuring a clutter-free and efficient user experience.
 
@@ -19,7 +19,7 @@ In the [`examples`](./examples/) folder, there are various examples you can expe
 - [`example_3.c`](./examples/example_3.c) - Loads and runs an ANN from a file.
 - [`example_4.c`](./examples/example_4.c) - Trains an ANN on the [IRIS data-set](https://archive.ics.uci.edu/ml/datasets/Iris) using backpropagation.
 
-I would be happy to review your code :)
+> *I would be happy to review your code :)*
 
 ## How it works
 
@@ -123,6 +123,8 @@ will provide a pointer to the array of predicted outputs (of `ann->outputs` leng
 - Every functions start with `dimanet_`.
 - Feel free to modify the code to your liking.
 
+> *Add more Hints here by pull requesting!*
+
 ## Extra Resources
 
 The [comp.ai.neural-nets
@@ -130,12 +132,14 @@ FAQ](http://www.faqs.org/faqs/ai-faq/neural-nets/part1/) is an excellent
 resource for an introduction to artificial neural networks.
 
 If you need an even smaller neural network library, check out the excellent single-hidden-layer library [tinn](https://github.com/glouw/tinn).
-
 If you're looking for a heavier, more opinionated neural network library in C,
 I recommend the [FANN library](http://leenissen.dk/fann/wp/). Another
 good library is Peter van Rossum's [Lightweight Neural
 Network](http://lwneuralnet.sourceforge.net/), which despite its name, is
 heavier and has more features than dimanet.
 
+> *Add more Extra Resources here by pull requesting!*
+
 ## Yeah
-That's all... for now.
+That's all... for now, but this was an awesome project to make.
+You are welcome to contribute to dimanet anytime!
