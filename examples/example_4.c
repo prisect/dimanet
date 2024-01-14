@@ -9,7 +9,7 @@
  * It is NOT an example of good machine learning techniques.
  */
 
-const char *iris_data = "example/iris.data";
+const char *iris_data = "iris.data";
 
 double *input, *class;
 int samples;
