@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "../dimanet.h"
 
-const char *save_name = "example/xor.ann";
+const char *save_name = "xor.ann";
 
 int main(int argc, char *argv[])
 {
