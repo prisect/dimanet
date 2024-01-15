@@ -1,5 +1,4 @@
-#ifndef dimanet_H
-#define dimanet_H
+#pragma once
 
 #include <stdio.h>
 
