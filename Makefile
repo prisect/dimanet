@@ -1,10 +1,10 @@
-# dont judge how cool this looks
+# dont judge how dope this looks
 
 CFLAGS = -Wall -Wshadow -O3 -g -march=native
 LDLIBS = -lm
 EXAMPLES_DIR = examples
 
-EXAMPLES = $(EXAMPLES_DIR)/example1 $(EXAMPLES_DIR)/example2 $(EXAMPLES_DIR)/example3 $(EXAMPLES_DIR)/example4
+EXAMPLES = $(EXAMPLES_DIR)/example1 $(EXAMPLES_DIR)/example2 $(EXAMPLES_DIR)/example3 $(EXAMPLES_DIR)/example4 $(EXAMPLES_DIR)/example5
 all: check $(EXAMPLES)
 
 sigmoid: CFLAGS += -Ddimanet_act=dimanet_act_sigmoid_cached
