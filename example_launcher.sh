@@ -26,6 +26,7 @@ while true; do
         3) ./examples/example3 && break ;;
         4) ./examples/example4 && break ;;
         5) ./examples/example5 && break ;;
+        exit) break ;;
         *)
             echo "Invalid choice. Enter a number between 1 and 5."
             continue
