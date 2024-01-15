@@ -1,7 +1,8 @@
-#include "dimanet.h"
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h> // Include this header for RAND_MAX
+
+#include "../dimanet.h"
 
 #define NUM_SAMPLES 100
 #define LEARNING_RATE 0.01
