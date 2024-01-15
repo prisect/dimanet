@@ -15,6 +15,7 @@ echo " 3 - ex3::Loads and runs an ANN from a file"
 echo " 4 - ex4::IRIS data-set using Backpropagation training"
 echo " 5 - ex5::Visualization of ANN Approximation"
 echo ""
+echo "WARNING: RUN `MAKE` BEFORE RUNNING THE SCRIPT!"
 
 while true; do
     read -p "1-5: -$ " choice
