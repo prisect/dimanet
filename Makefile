@@ -1,3 +1,5 @@
+# dont judge how cool this looks
+
 CFLAGS = -Wall -Wshadow -O3 -g -march=native
 LDLIBS = -lm
 EXAMPLES_DIR = examples
