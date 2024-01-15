@@ -15,17 +15,17 @@ echo " 3 - ex3::Loads and runs an ANN from a file"
 echo " 4 - ex4::IRIS data-set using Backpropagation training"
 echo " 5 - ex5::Visualization of ANN Approximation"
 echo ""
-echo "WARNING: RUN `MAKE` BEFORE RUNNING THE SCRIPT!"
+echo "WARNING: RUN MAKE BEFORE RUNNING THE SCRIPT!"
 
 while true; do
     read -p "1-5: -$ " choice
 
     case $choice in
-        1) ./examples/example1 && break ;;
-        2) ./examples/example2 && break ;;
-        3) ./examples/example3 && break ;;
-        4) ./examples/example4 && break ;;
-        5) ./examples/example5 && break ;;
+        1) ./examples/example1 && continue ;;
+        2) ./examples/example2 && continue ;;
+        3) ./examples/example3 && continue ;;
+        4) ./examples/example4 && continue ;;
+        5) ./examples/example5 && continue ;;
         exit) break ;;
         *)
             echo "Invalid choice. Enter a number between 1 and 5."
