@@ -19,7 +19,7 @@ In the [`examples`](./examples/) folder, there are various examples you can expe
 - [`example_4.c`](./examples/example_4.c) - Trains an ANN on the [IRIS data-set](https://archive.ics.uci.edu/ml/datasets/Iris) using backpropagation.
 - [`example_5.c`](./examples/example_5.c) - Visualization of Neural Network Approximation.
 
-> *I would be happy to review your code :)*
+> *It would be really appreciated to contribute and to add example files :)*
 
 ## How it works
 
@@ -142,4 +142,5 @@ heavier and has more features than dimanet.
 
 ## Yeah
 That's all... for now, but this was an awesome project to make.
-You are welcome to contribute to dimanet anytime!
+Want to see some AI related projects I made? Visit [Dima's website](https://dimaonline.fr/) to find out more!
+You are welcome to contribute to dimanet anytime! Thank you!
