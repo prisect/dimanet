@@ -2,17 +2,17 @@ name: Makefile CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "preview", "gpt-dima" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "preview", "gpt-dima" ]
 
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: archlinux
 
     steps:
     - uses: actions/checkout@v3
 
-    - name: make dimanet # make, compile everything
+    - name: makedimanet # make, compile everything
       run: make
