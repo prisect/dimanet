@@ -1,14 +1,26 @@
-# DimaNet | ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/dimaaac/DimaNet/makefile.yml) ![GitHub last commit](https://img.shields.io/github/last-commit/dimaaac/DimaNet)
-DimaNet serves as a compact, yet powerful library designed for the implementation and training of feedforward artificial neural networks (ANN) in the C programming language. Striving for simplicity, speed, reliability, and customization, DimaNet offers a lean set of essential functions, ensuring a clutter-free and efficient user experience.
+# DimaNet <sup>by unsrc</sup> | ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/dimaaac/DimaNet/makefile.yml) ![GitHub last commit](https://img.shields.io/github/last-commit/dimaaac/DimaNet)
+DimaNet serves as a compact, yet powerful library designed for the implementation and training of feedforward artificial neural networks (ANN) in the classic *ANSI* C programming language. Striving for simplicity, speed, reliability, and customization, DimaNet offers a lean set of essential functions, ensuring a clutter-free and efficient user experience.
+
+#### Notice
+
+> *If you have issues with the permission, or the make file, please report this issue at the ***Issues*** tab. (make sure to see if the project successfully built on the top of this readme file before reporting anything. if not, it might probably be an issue with your system or the make command it self)*
+> *Also, search errors up instead of commiting issues concerning the commands, etc...*
 
 ## Building
 
-To use DimaNet, you have to include: `dimanet.c` and `dimanet.h` as DimaNet is locally contained. Include the following files with 
+To build, just run:
+```
+make
+```
+and it will build everything for you, as well as the examples. 
+> *if i wasnt that lazy to add examples into the makefile too*
+
+## Adding DimaNet
+To use DimaNet, you have to include: `dimanet.c` and `dimanet.h` as **DimaNet is locally contained**. Include the following files with 
 ```c
 #include <dimanet.c> // Main DimaNet
 #include <dimanet.h> // Header
 ```
-
 ## Examples
 
 In the [`examples`](./examples/) folder, there are various examples you can experiment with. Including:
@@ -144,3 +156,5 @@ heavier and has more features than dimanet.
 That's all... for now, but this was an awesome project to make.
 Want to see some AI related projects I made? Visit [Dima's website](https://dimaonline.fr/) to find out more!
 You are welcome to contribute to dimanet anytime! Thank you!
+
+**by unsrc with love**
