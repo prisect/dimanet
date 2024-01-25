@@ -1,4 +1,4 @@
-<img alt="DimaNet Logo" width="340" height="240" src="https://github.com/dimaaac/DimaNet/blob/preview/misc/IMG_0886.png" align="right" />
+<img alt="DimaNet Logo" width="340" height="230" src="https://github.com/dimaaac/DimaNet/blob/preview/misc/IMG_0886.png" align="right" />
 
 # DimaNet
 
