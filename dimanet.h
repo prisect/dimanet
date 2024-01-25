@@ -77,3 +77,5 @@ double dimanet_act_linear(const dimanet *ann, double a);
 #ifdef __cplusplus
 }
 #endif
+
+/* no way */
