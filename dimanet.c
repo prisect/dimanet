@@ -72,26 +72,26 @@ double dimanet_act_sigmoid_cached(const dimanet *ann unused, double a) {
     return lookup[j];
 }
 
-// --- for zekiah, comment for everything
-//
-// Function: double dimanet_act_linear(const struct dimanet *ann unused, double a)
-// Description: Linear activation function that simply returns the input value 'a' unchanged.
-// Parameters:
-//   - const struct dimanet *ann unused: Unused pointer to a dimanet structure.
-//   - double a: Input value to the activation function.
-// Returns:
-//   - double: The input value 'a' unchanged.
+/* --- for zekiah, comment for everything
+
+Function: double dimanet_act_linear(const struct dimanet *ann unused, double a)
+Description: Linear activation function that simply returns the input value 'a' unchanged.
+Parameters:
+    - const struct dimanet *ann unused: Unused pointer to a dimanet structure.
+    - double a: Input value to the activation function.
+Returns:
+    - double: The input value 'a' unchanged. */
 double dimanet_act_linear(const struct dimanet *ann unused, double a) {
     return a;
 }
 
-// Function: double dimanet_act_threshold(const struct dimanet *ann unused, double a)
-// Description: Threshold activation function that returns 1 if the input 'a' is greater than 0, otherwise 0.
-// Parameters:
-//   - const struct dimanet *ann unused: Unused pointer to a dimanet structure.
-//   - double a: Input value to the activation function.
-// Returns:
-//   - double: 1 if 'a' is greater than 0, 0 otherwise.
+/* Function: double dimanet_act_threshold(const struct dimanet *ann unused, double a)
+Description: Threshold activation function that returns 1 if the input 'a' is greater than 0, otherwise 0.
+Parameters:
+    - const struct dimanet *ann unused: Unused pointer to a dimanet structure.
+    - double a: Input value to the activation function.
+Returns:
+    - double: 1 if 'a' is greater than 0, 0 otherwise. */
 double dimanet_act_threshold(const struct dimanet *ann unused, double a) {
     return a > 0;
 }
@@ -392,4 +392,3 @@ void dimanet_write(dimanet const *ann, FILE *out) {
         fprintf(out, " %.20e", ann->weight[i]);
     }
 }
-
