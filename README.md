@@ -4,7 +4,7 @@
 
 ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/dimaaac/DimaNet/makefile.yml) ![GitHub last commit](https://img.shields.io/github/last-commit/dimaaac/DimaNet)
 
-DimaNet, just a bad integration of AI serves as a compact, yet powerful library designed for the implementation and training of feedforward artificial neural networks (ANN) in the classic *ANSI* C programming language. Striving for simplicity, speed, reliability, and customization, DimaNet offers a lean set of essential functions, ensuring a clutter-free and efficient user experience.
+DimaNet, just a bad integration of AI serves as a compact, yet powerful library designed for the implementation and training of feedforward artificial neural networks (ANN) in the classic *ANSI* C programming language. Striving for simplicity, speed, reliability, and customization, DimaNet offers a lean set of essential functions,~ ensuring a clutter-free and efficient user experience.~
 
 #### Notice
 
