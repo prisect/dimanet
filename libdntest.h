@@ -1,4 +1,4 @@
-// libdntest.h - library dimanet test
+/* libdntest.h - library dimanet test */
 
 #ifndef __LIBDNTEST_H__
 #define __LIBDNTEST_H__
