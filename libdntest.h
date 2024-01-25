@@ -62,3 +62,5 @@ static int lfails = 0;
     }} while (0)
 
 #endif /*__LIBDNTEST_H__*/
+
+/* oww yes */
