@@ -5,6 +5,7 @@
 ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/dimaaac/dimanet/makefile.yml?branch=preview)
 ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/dimaaac/dimanet/makefile.yml?branch=gpt-dima)
 ![GitHub last commit](https://img.shields.io/github/last-commit/dimaaac/dimanet)
+![Static Badge](https://img.shields.io/badge/join-discord-blue?style=flat&link=https%3A%2F%2Fdsc.gg%2Fdima)
 
 DimaNet, just a bad integration of AI serves as a compact, yet powerful library designed for the implementation and training of feedforward artificial neural networks (ANN) in the classic *ANSI* C programming language. Striving for simplicity, speed, reliability, and customization, DimaNet offers a lean set of essential functions, ~~ensuring a clutter-free and efficient user experience.~~
 
