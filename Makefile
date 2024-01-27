@@ -17,20 +17,19 @@ debug: debug.o dimanet.o
 	./$@
 
 test: debug
-	./$<
+	./debug
 
 build: compile
 
 main.o: main.c
-	$(CC) $(CFLAGS) -c -o $@ $<
+	$(CC) $(CFLAGS) -c -o main.o main.c
 
 compile: main.o dimanet.o
-	$(CC) $(CFLAGS) -o $@ $^ $(LDLIBS)
+	$(CC) $(CFLAGS) -o compile main.o dimanet.o $(LDLIBS)
 
 clean:
 	$(RM) *.o
-	$(RM) debug
 	$(RM) persist.txt
 	$(RM) compile
 
-.PHONY: sigmoid threshold linear clean compile test
+.PHONY: sigmoid threshold linear clean compile
