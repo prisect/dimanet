@@ -2,10 +2,10 @@ name: Makefile CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "preview", "map" ]
   pull_request:
-    branches: [ "main" ]
-
+    branches: [ "preview", "map" ]
+    
 jobs:
   build:
 
