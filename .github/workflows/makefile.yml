@@ -2,9 +2,9 @@ name: Makefile CI
 
 on:
   push:
-    branches: [ "preview", "gpt-dima" ]
+    branches: [ "preview", "map" ]
   pull_request:
-    branches: [ "preview", "gpt-dima" ]
+    branches: [ "preview", "map" ]
 
 jobs:
   build:
