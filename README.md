@@ -45,7 +45,7 @@ In the [`examples`](./examples/) folder, there are various examples you can expe
 
 Artificial Neural Networks (ANNs) are computing systems inspired by the biological neural networks that constitute animal brains. They are composed of interconnected nodes, or “neurons”, which mimic the neurons in a biological brain. Each connection between neurons can transmit a signal from one to another. The receiving neuron processes the signal and signals downstream neurons connected to it.
 
-See this visual reprensentation:
+See this visual representation:
 
 <img src="https://github.com/dimaaac/DimaNet/blob/main/misc/layerann.png">
 
