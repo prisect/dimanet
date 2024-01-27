@@ -13,8 +13,9 @@ linear: CFLAGS += -Ddimanet_act=dimanet_act_linear
 linear: all
 
 debug: debug.o dimanet.o
+	$(CC) $(CFLAGS) -o $@ $^ $(LDLIBS)
 
-test: build
+test: debug
 	./debug
 
 build: compile
