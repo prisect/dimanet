@@ -16,7 +16,6 @@ debug: debug.o dimanet.o
 	$(CC) $(CFLAGS) -o $@ $^ $(LDLIBS)
 	./$@
 
-
 test: debug
 	./$<
 
