@@ -59,15 +59,12 @@ void dimanet_init_sigmoid_lookup(const dimanet *ann) {
 }
 
 double dimanet_act_sigmoid_cached(const dimanet *ann unused, double a) {
-    if (isnan(a)) {
-        fprintf(stderr, "Error: Input value is NaN!\n");
-        abort();  // or handle the error in a way that makes sense for your application
-    }
+    assert(!isnan(a));
 
     if (a < sigmoid_dom_min) return lookup[0];
     if (a >= sigmoid_dom_max) return lookup[LOOKUP_SIZE - 1];
 
-    size_t j = (size_t)((a - sigmoid_dom_min) * interval + 0.5);
+    size_t j = (size_t)((a-sigmoid_dom_min)*interval+0.5);
 
     /* Because floating point... */
     if (unlikely(j >= LOOKUP_SIZE)) return lookup[LOOKUP_SIZE - 1];
@@ -75,16 +72,15 @@ double dimanet_act_sigmoid_cached(const dimanet *ann unused, double a) {
     return lookup[j];
 }
 
-
 /* --- for zekiah, comment for everything
 
 Function: double dimanet_act_linear(const struct dimanet *ann unused, double a)
-Description: Linear activation function that simply returns the input value 'a' unchanged.
+Description: Linear activation function that simply returns the input value *a* unchanged.
 Parameters:
     - const struct dimanet *ann unused: Unused pointer to a dimanet structure.
     - double a: Input value to the activation function.
 Returns:
-    - double: The input value 'a' unchanged. */
+    - double: The input value *a* unchanged. */
 double dimanet_act_linear(const struct dimanet *ann unused, double a) {
     return a;
 }
