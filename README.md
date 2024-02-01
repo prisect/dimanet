@@ -17,9 +17,12 @@ To build, just run:
 ```
 make
 ```
-and it will build everything for you, as well as the examples. 
-> *if i wasnt that lazy to add examples into the makefile too*
+and it will build everything for you, as well as the examples. <- *(only in preview branch)*
 
+For more commands, run:
+```
+make help
+```
 ## Adding DimaNet
 To use DimaNet, you have to include: `dimanet.c` and `dimanet.h` as **DimaNet is locally contained**. Include the following files with 
 ```c
