@@ -1,4 +1,4 @@
-<img alt="DimaNet Logo" width="340" height="230" src="logo.png" align="https://raw.githubusercontent.com/dimaaac/dimanet/preview/docs/logo.png" />
+<img alt="DimaNet Logo didn't load :(" width="340" height="230" src="https://raw.githubusercontent.com/dimaaac/dimanet/preview/docs/logo.png" align="right" />
 
 # DimaNet
 ![Makefile](https://img.shields.io/github/actions/workflow/status/dimaaac/dimanet/makefile.yml?branch=preview)
