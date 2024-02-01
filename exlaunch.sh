@@ -6,16 +6,18 @@
 
 #!/bin/bash
 
-echo "DimaNet Example Launcher"
 echo ""
-echo "Select a C example to run:"
+echo -e "\033[1;36m DimaNet Example Launcher\033[0m"
+echo ""
+echo -e "\033[1;36m Select a C example to run: \033[0m"
 echo " 1 - ex1::XOR Function using Backpropagation training"
 echo " 2 - ex2::XOR Function using Random Search training"
 echo " 3 - ex3::Loads and runs an ANN from a file"
 echo " 4 - ex4::IRIS data-set using Backpropagation training"
 echo " 5 - ex5::Visualization of ANN Approximation"
 echo ""
-echo "WARNING: RUN MAKE BEFORE RUNNING THE SCRIPT!"
+echo -e "\033[1;33mNOTICE:\033[0;31m RUN MAKE BEFORE EXECUTING THIS SCRIPT\033[0m"
+echo ""
 
 while true; do
     read -p "1-5: -$ " choice
