@@ -73,4 +73,4 @@ clean:
 	$(RM) main
 	$(RM) $(EXAMPLES_DIR)/*.o
 
-.PHONY: sigmoid threshold linear clean exclean examples help
+.PHONY: sigmoid threshold linear clean exclean build test examples help
