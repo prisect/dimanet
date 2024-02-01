@@ -1,6 +1,6 @@
 # License-Identifier: GPL-3.0
-VERSION: 1.2
-NAME: DimaNet
+# VERSION: 1.2
+# NAME: DimaNet
 
 # DOCUMENTATION
 # ----------------------------------------
@@ -16,7 +16,7 @@ EXAMPLES_DIR = examples
 
 EXAMPLES = $(EXAMPLES_DIR)/example1 $(EXAMPLES_DIR)/example2 $(EXAMPLES_DIR)/example3 $(EXAMPLES_DIR)/example4 $(EXAMPLES_DIR)/example5
 
-all: test build
+all: build
 
 sigmoid: CFLAGS += -Ddimanet_act=dimanet_act_sigmoid_cached
 sigmoid: all
