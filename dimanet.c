@@ -59,18 +59,22 @@ void dimanet_init_sigmoid_lookup(const dimanet *ann) {
 }
 
 double dimanet_act_sigmoid_cached(const dimanet *ann unused, double a) {
-    assert(!isnan(a));
+    if (isnan(a)) {
+        fprintf(stderr, "Error: Input value is NaN!\n");
+        abort();  // or handle the error in a way that makes sense for your application
+    }
 
     if (a < sigmoid_dom_min) return lookup[0];
     if (a >= sigmoid_dom_max) return lookup[LOOKUP_SIZE - 1];
 
-    size_t j = (size_t)((a-sigmoid_dom_min)*interval+0.5);
+    size_t j = (size_t)((a - sigmoid_dom_min) * interval + 0.5);
 
     /* Because floating point... */
     if (unlikely(j >= LOOKUP_SIZE)) return lookup[LOOKUP_SIZE - 1];
 
     return lookup[j];
 }
+
 
 /* --- for zekiah, comment for everything
 

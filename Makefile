@@ -1,5 +1,8 @@
 CFLAGS = -Wall -Wshadow -O3 -g -march=native
 LDLIBS = -lm
+EXAMPLES_DIR = examples
+
+EXAMPLES = $(EXAMPLES_DIR)/example1 $(EXAMPLES_DIR)/example2 $(EXAMPLES_DIR)/example3 $(EXAMPLES_DIR)/example4 $(EXAMPLES_DIR)/example5
 
 all: test build
 
@@ -17,18 +20,30 @@ debug: debug.o dimanet.o
 
 test: debug
 	./debug
+build: main
+examples: $(EXAMPLES)
 
-build: compile
+$(EXAMPLES_DIR)/example1: $(EXAMPLES_DIR)/example_1.o dimanet.o
+	$(CC) $(CFLAGS) -o $@.o $^ $(LDLIBS)
+$(EXAMPLES_DIR)/example2: $(EXAMPLES_DIR)/example_2.o dimanet.o
+	$(CC) $(CFLAGS) -o $@.o $^ $(LDLIBS)
+$(EXAMPLES_DIR)/example3: $(EXAMPLES_DIR)/example_3.o dimanet.o
+	$(CC) $(CFLAGS) -o $@.o $^ $(LDLIBS)
+$(EXAMPLES_DIR)/example4: $(EXAMPLES_DIR)/example_4.o dimanet.o
+	$(CC) $(CFLAGS) -o $@.o $^ $(LDLIBS)
+$(EXAMPLES_DIR)/example5: $(EXAMPLES_DIR)/example_5.o dimanet.o
+	$(CC) $(CFLAGS) -o $@.o $^ $(LDLIBS)
 
 main.o: main.c
 	$(CC) $(CFLAGS) -c -o main.o main.c
 
-compile: main.o dimanet.o
-	$(CC) $(CFLAGS) -o compile main.o dimanet.o $(LDLIBS)
+main: main.o dimanet.o
+	$(CC) $(CFLAGS) -o main main.o dimanet.o $(LDLIBS)
 
 clean:
 	$(RM) *.o
+	$(RM) $(EXAMPLES_DIR)/*.o
 	$(RM) persist.txt
-	$(RM) compile
+	$(RM) main
 
-.PHONY: sigmoid threshold linear clean compile
+.PHONY: sigmoid threshold linear clean compile examples
