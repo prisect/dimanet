@@ -16,7 +16,7 @@ EXAMPLES_DIR = examples
 
 EXAMPLES = $(EXAMPLES_DIR)/example1 $(EXAMPLES_DIR)/example2 $(EXAMPLES_DIR)/example3 $(EXAMPLES_DIR)/example4 $(EXAMPLES_DIR)/example5
 
-all: build
+all: test build
 
 sigmoid: CFLAGS += -Ddimanet_act=dimanet_act_sigmoid_cached
 sigmoid: all
@@ -73,4 +73,4 @@ clean:
 	$(RM) main
 	$(RM) $(EXAMPLES_DIR)/*.o
 
-.PHONY: sigmoid threshold linear clean build examples help
+.PHONY: sigmoid threshold linear clean exclean build test examples help
