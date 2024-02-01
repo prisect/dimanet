@@ -15,12 +15,15 @@ DimaNet, just a bad integration of AI serves as a compact, yet powerful library 
 ## Building
 
 To build, just run:
-```
+```bash
 make
 ```
-and it will build everything for you, as well as the examples. 
-> *if i wasnt that lazy to add examples into the makefile too*
+and it will build everything for you, as well as the examples. <- *(only for branch:preview)*
 
+To list all the commands, execute:
+```bash
+make help
+```
 ## Adding DimaNet
 To use DimaNet, you have to include: `dimanet.c` and `dimanet.h` as **DimaNet is locally contained**. Include the following files with 
 ```c
