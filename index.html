@@ -1,143 +1,102 @@
-<!doctype html>
-<html>
+<html lang="en">
+
 <head>
-  <title>DimaNet</title>
-        <link rel="stylesheet" href="docs/css/main.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>dimaonline</title>
 </head>
+
 <body>
+  <h1 id="glow">Greetings, I&#39;m Dima!</h1>
+  <p>Welcome to my page. I am Dima. If it's your first time here, welcome.</p>
 
-<img alt="DimaNet Logo" width="340" height="230" src="https://raw.githubusercontent.com/dimaaac/dimanet/preview/docs/logo.png" align="right" />
+  <blockquote><i>Also, because I receive thousands of DMs per day, just here to say that this isn't any kind of ARG. It's more than a "Rabbit Hole".</i> Or should I say that?</blockquote>
 
-<h1 id="dimanet">DimaNet</h1>
-<p><img src="https://img.shields.io/github/actions/workflow/status/dimaaac/dimanet/makefile.yml?branch=preview" alt="Makefile">
-<img src="https://img.shields.io/github/actions/workflow/status/dimaaac/dimanet/makefile.yml?branch=map" alt="Makefile">
-<img src="https://img.shields.io/github/last-commit/dimaaac/dimanet" alt="GitHub last commit"></p>
-<p>DimaNet, just a bad integration of AI serves as a compact, yet powerful library designed for the implementation and training of feedforward artificial neural networks (ANN) in the classic <em>ANSI</em> C programming language. Striving for simplicity, speed, reliability, and customization, DimaNet offers a lean set of essential functions, <del>ensuring a clutter-free and efficient user experience</del>.</p>
-<h4 id="notice">Notice</h4>
-<blockquote>
-<p><em>If you have issues with the permission, or the make file, please report this issue at the <em><strong>Issues</strong></em> tab. (make sure to see if the project successfully built on the top of this readme file before reporting anything. if not, it might probably be an issue with your system or the make command it self)</em>
-<em>Also, search errors up instead of commiting issues concerning the commands, etc...</em></p>
-</blockquote>
-<h2 id="building">Building</h2>
-<p>To build, just run:</p>
-<pre><code>make
-</code></pre>
-<p>and it will build everything for you, as well as the examples. </p>
-<blockquote>
-<p><em>if i wasnt that lazy to add examples into the makefile too</em></p>
-</blockquote>
-<h2 id="adding-dimanet">Adding DimaNet</h2>
-<p>To use DimaNet, you have to include: <code>dimanet.c</code> and <code>dimanet.h</code> as <strong>DimaNet is locally contained</strong>. Include the following files with </p>
-<pre><code class="language-c">#include &lt;dimanet.c&gt; // Main DimaNet
-#include &lt;dimanet.h&gt; // Header
-</code></pre>
-<h2 id="examples">Examples</h2>
-<p>In the <a href="./examples/"><code>examples</code></a> folder, there are various examples you can experiment with. Including:</p>
-<ul>
-<li><a href="https://github.com/dimaaac/dimanet/blob/preview/examples/example_1.c"><code>example_1.c</code></a> - Trains an ANN on the XOR function using backpropagation.</li>
-<li><a href="https://github.com/dimaaac/dimanet/blob/preview/examples/example_2.c"><code>example_2.c</code></a> - Trains an ANN on the XOR function using random search.</li>
-<li><a href="https://github.com/dimaaac/dimanet/blob/preview/examples/example_3.c"><code>example_3.c</code></a> - Loads and runs an ANN from a file.</li>
-<li><a href="https://github.com/dimaaac/dimanet/blob/preview/examples/example_4.c"><code>example_4.c</code></a> - Trains an ANN on the <a href="https://archive.ics.uci.edu/ml/datasets/Iris">IRIS data-set</a> using backpropagation.</li>
-<li><a href="https://github.com/dimaaac/dimanet/blob/preview/examples/example_5.c"><code>example_5.c</code></a> - Visualization of Neural Network Approximation.</li>
-</ul>
-<blockquote>
-<p><em>It would be really appreciated to contribute and to add example files :)</em></p>
-</blockquote>
-<h2 id="how-it-works">How it works</h2>
-<p>Artificial Neural Networks (ANNs) are computing systems inspired by the biological neural networks that constitute animal brains. They are composed of interconnected nodes, or “neurons”, which mimic the neurons in a biological brain. Each connection between neurons can transmit a signal from one to another. The receiving neuron processes the signal and signals downstream neurons connected to it.</p>
-<p>See this visual representation:</p>
-<img src="https://raw.githubusercontent.com/dimaaac/dimanet/preview/docs/visualann.png">
+  <h2 id="what-am-i-currently-working-on-">What am I currently working on?</h2>
 
-<p>In a three-layer neural network, there are three layers of neurons: the input layer, the hidden layer, and the output layer. The input layer receives input patterns and passes them to the neurons in the hidden layer. Each neuron in the hidden layer applies a set of weights to the inputs, sums them, applies an activation function, and passes the result to the neurons in the output layer. The weights represent the strength or intensity of the input for the features being processed.</p>
-<p>The output layer receives the signals from the hidden layer, applies another set of weights, and sums them. The final output is then computed using another activation function. The weights in the network are adjusted based on the error of the final output through a process called backpropagation. In backpropagation, the error is calculated by comparing the predicted output with the expected output, and this error is propagated back through the network, adjusting the weights for each neuron. This process is repeated many times, and the network learns to make more accurate predictions. The three-layer neural network is a fundamental architecture in deep learning, and understanding it is key to understanding more complex neural networks.</p>
-<p>We then train it on a set of labeled data using backpropagation and ask it to predict on a test data point:</p>
-<pre><code class="language-c">#include &quot;dimanet.h&quot;
+  <p>Immersed within the dynamic and ever-evolving realm of neural networks and related technologies, I find myself
+    captivated by the intricate interplay of algorithms and data. Neural networks, a subset of artificial intelligence,
+    emulate the functioning of the human brain, enabling machines to learn and make decisions based on patterns and
+    experiences. The exploration of deep learning architectures, convolutional neural networks, recurrent neural
+    networks, and other advanced techniques has become a fascinating journey.</p>
 
-/* Not shown, loading your training and test data. */
-double **training_data_input, **training_data_output, **test_data_input;
+  <p>Currently, I&#39;m deeply engrossed in a project shrouded in mystery—an enigmatic venture known only as <high>
+      <u>The Source</u>
+    </high>. This endeavor takes you into the uncharted territories of innovation, where the
+    intricacies are deliberately obscured, and the boundaries between imagination and reality blur. In the realm of the
+    cryptic <high><u>Source</u></high> I navigate through lines of code, explore uncharted algorithms, and delve into
+    the arcane depths of technology. This clandestine pursuit thrives on the allure of the unknown, fueling a curiosity
+    that transcends conventional understanding. It&#39;s a peculiar journey, veiled in secrecy, where the whispers of
+    innovation echo through the corridors of ambiguity.</p>
 
-/* New network with 2 inputs,
- * 1 hidden layer of 3 neurons each,
- * and 2 outputs. */
-dimanet *ann = dimanet_init(2, 1, 3, 2);
+  <blockquote>
 
-/* Learn on the training set. */
-for (i = 0; i &lt; 300; ++i) {
-    for (j = 0; j &lt; 100; ++j)
-        dimanet_train(ann, training_data_input[j], training_data_output[j], 0.1);
-}
+    <p><i>
+        In this complex landscape, my focus extends beyond mere theoretical understanding to practical applications. I
+        engage with challenges such as image recognition, natural language processing, and predictive modeling,
+        leveraging the power of neural networks to unravel insights and enhance decision-making processes. As the
+        boundaries of this field continually expand, I am driven by the pursuit of pushing those limits, experimenting
+        with emerging technologies, and contributing to the evolution of neural network applications in diverse domains.
+        This commitment stems from both a professional curiosity and a genuine passion for the transformative potential
+        embedded within the intricate layers of neural networks and their technological counterparts.
+      </i></p>
 
-/* Run the network and see what it predicts. */
-double const *prediction = dimanet_run(ann, test_data_input[0]);
-printf(&quot;Output for the first test data point is: %f, %f\n&quot;, prediction[0], prediction[1]);
+  </blockquote>
 
-dimanet_free(ann);
-</code></pre>
-<p>This example is to show API usage, it is not showing good machine learning techniques. In a real application you would likely want to learn on the test data in a random order. You would also want to monitor the learning to prevent over-fitting.</p>
-<h2 id="usage">Usage</h2>
-<h3 id="creating-and-freeing-anns">Creating and Freeing ANNs</h3>
-<pre><code class="language-C">dimanet *dimanet_init(int inputs, int hidden_layers, int hidden, int outputs);
-dimanet *dimanet_copy(dimanet const *ann);
-void dimanet_free(dimanet *ann);
-</code></pre>
-<p>Creating a new ANN is done with the <code>dimanet_init()</code> function. Its arguments
-are the number of inputs, the number of hidden layers, the number of neurons in
-each hidden layer, and the number of outputs. It returns a <code>dimanet</code> struct pointer.</p>
-<p>Calling <code>dimanet_copy()</code> will create a deep-copy of an existing <code>dimanet</code> struct.</p>
-<p>Call <code>dimanet_free()</code> when you&#39;re finished with an ANN returned by <code>dimanet_init()</code>.</p>
-<h3 id="training-anns">Training ANNs</h3>
-<pre><code class="language-C">void dimanet_train(dimanet const *ann, double const *inputs,
-        double const *desired_outputs, double learning_rate);
-</code></pre>
-<p><code>dimanet_train()</code> will preform one update using standard backpropogation. It
-should be called by passing in an array of inputs, an array of expected outputs,
-and a learning rate.</p>
-<p>A primary design goal of dimanet was to store all the network weights in one
-contigious block of memory. This makes it easy and efficient to train the
-network weights using direct-search numeric optimization algorthims,
-such as <a href="https://en.wikipedia.org/wiki/Hill_climbing">Hill Climbing</a>,
-<a href="https://en.wikipedia.org/wiki/Genetic_algorithm">the Genetic Algorithm</a>, <a href="https://en.wikipedia.org/wiki/Simulated_annealing">Simulated
-Annealing</a>, etc.
-These methods can be used by searching on the ANN&#39;s weights directly.
-Every <code>dimanet</code> struct contains the members <code>int total_weights;</code> and
-<code>double *weight;</code>.  <code>*weight</code> points to an array of <code>total_weights</code>
-size which contains all weights used by the ANN.</p>
-<h3 id="saving-and-loading-anns">Saving and Loading ANNs</h3>
-<pre><code class="language-C">dimanet *dimanet_read(FILE *in);
-void dimanet_write(dimanet const *ann, FILE *out);
-</code></pre>
-<p>DimaNet provides the <code>dimanet_read()</code> and <code>dimanet_write()</code> functions for loading or saving an ANN in a text-based format.</p>
-<h3 id="evaluating">Evaluating</h3>
-<pre><code class="language-C">double const *dimanet_run(dimanet const *ann, double const *inputs);
-</code></pre>
-<p>Call <code>dimanet_run()</code> on a trained ANN to run a feed-forward pass on a given set of inputs. <code>dimanet_run()</code>
-will provide a pointer to the array of predicted outputs (of <code>ann-&gt;outputs</code> length).</p>
-<h2 id="hints">Hints</h2>
-<ul>
-<li>Every functions start with <code>dimanet_</code>.</li>
-<li>Feel free to modify the code to your liking.</li>
-</ul>
-<blockquote>
-<p><em>Add more Hints here by pull requesting!</em></p>
-</blockquote>
-<h2 id="extra-resources">Extra Resources</h2>
-<p>The <a href="http://www.faqs.org/faqs/ai-faq/neural-nets/part1/">comp.ai.neural-nets
-FAQ</a> is an excellent
-resource for an introduction to artificial neural networks.</p>
-<p>If you need an even smaller neural network library, check out the excellent single-hidden-layer library <a href="https://github.com/glouw/tinn">tinn</a>.
-If you&#39;re looking for a heavier, more opinionated neural network library in C,
-I recommend the <a href="http://leenissen.dk/fann/wp/">FANN library</a>. Another
-good library is Peter van Rossum&#39;s <a href="http://lwneuralnet.sourceforge.net/">Lightweight Neural
-Network</a>, which despite its name, is
-heavier and has more features than dimanet.</p>
-<blockquote>
-<p><em>Add more Extra Resources here by pull requesting!</em></p>
-</blockquote>
-<h2 id="yeah">Yeah</h2>
-<p>That&#39;s all... for now, but this was an awesome project to make.
-Want to see some AI related projects I made? Visit <a href="https://dimaonline.fr/">Dima&#39;s website</a> to find out more!
-You are welcome to contribute to dimanet anytime! Thank you!</p>
-<p><strong>by unsrc with love</strong></p>
+  <h2 id="how-to-reach-me-">How to Reach Me?</h2>
 
+  <p>
+    My schedule is quite packed at the moment, but if you&#39;d like to get in touch, feel free to reach out to me
+    through
+    <a href="https://t.me/dimalmfao">Telegram</a> or
+    <a href="https://discord.gg/4HJBmGDWuV">Discord</a>. And, I recommend you to listen to my latest music on
+    <a href="https://www.youtube.com/@dimalmfao">Youtube</a>.
+  </p>
+
+  <center>
+    <h1 style="width:150px;"></h1>dimalmfao @ copyright 2023 - 2024
+  </center>
+
+  <style>
+    blockquote {
+      padding: 10px 20px;
+      margin: 0 0 20px;
+      font-size: 16px;
+      border-left: 5px solid #444c56;
+      color: #636e7b;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+      font-size: var(--body-font-size, 16px);
+      line-height: 1.5;
+      color: #ccd1db;
+      background-color: #1d1f26;
+      padding: 30px;
+    }
+
+    h1,
+    h2 {
+      border-bottom: 1px solid #373e47;
+      /* Adjust the color as needed */
+      padding-bottom: 0.63em;
+      /* Adjust spacing as needed */
+    }
+
+    #glow {
+      text-shadow: 0 0 35px #ccd1db;
+    }
+
+    high {
+      color: #6677b3;
+    }
+
+    a {
+      color: #6677b3;
+
+    }
+  </style>
 </body>
+
 </html>
