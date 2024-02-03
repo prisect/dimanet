@@ -96,8 +96,10 @@ Call `dimanet_free()` when you're finished with an ANN returned by `dimanet_init
 
 ### Training ANNs
 ```C
-void dimanet_train(dimanet const *ann, double const *inputs,
-        double const *desired_outputs, double learning_rate);
+void dimanet_train(dimanet const *ann,
+                   double const *inputs,
+                   double const *desired_outputs,
+                   double learning_rate);
 ```
 
 `dimanet_train()` will preform one update using standard backpropogation. It
@@ -127,7 +129,8 @@ DimaNet provides the `dimanet_read()` and `dimanet_write()` functions for loadin
 ### Evaluating
 
 ```C
-double const *dimanet_run(dimanet const *ann, double const *inputs);
+double const *dimanet_run(dimanet const *ann,
+                          double const *inputs);
 ```
 
 Call `dimanet_run()` on a trained ANN to run a feed-forward pass on a given set of inputs. `dimanet_run()`
