@@ -2,9 +2,9 @@ name: Makefile CI
 
 on:
   push:
-    branches: [ "preview", "map" ]
+    branches: [ "preview" ]
   pull_request:
-    branches: [ "preview", "map" ]
+    branches: [ "preview" ]
     
 jobs:
   build:
@@ -14,5 +14,5 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: builddimanet # make, compile everything
-      run: make
+    - name: builddimanet
+      run: make && make debug
