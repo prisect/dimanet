@@ -1,9 +1,9 @@
 <img alt="DimaNet Logo didn't load :(" width="340" height="230" src="https://raw.githubusercontent.com/dimaaac/dimanet/preview/docs/logo.png" align="right" />
 
 # DimaNet
-![Makefile](https://img.shields.io/github/actions/workflow/status/dimaaac/dimanet/makefile.yml?branch=preview)
-![Makefile](https://img.shields.io/github/actions/workflow/status/dimaaac/dimanet/makefile.yml?branch=map)
-![GitHub last commit](https://img.shields.io/github/last-commit/dimaaac/dimanet)
+![Makefile](https://img.shields.io/github/actions/workflow/status/dimalmfao/dimanet/makefile.yml?branch=preview)
+![Makefile](https://img.shields.io/github/actions/workflow/status/dimalmfao/dimanet/makefile.yml?branch=map)
+![GitHub last commit](https://img.shields.io/github/last-commit/dimalmfao/dimanet)
 
 DimaNet, just a bad integration of AI serves as a compact, yet powerful library designed for the implementation and training of feedforward artificial neural networks (ANN) in the classic *ANSI* C programming language. Striving for simplicity, speed, reliability, and customization, DimaNet offers a lean set of essential functions, ~~ensuring a clutter-free and efficient user experience~~.
 
@@ -42,7 +42,7 @@ Artificial Neural Networks (ANNs) are computing systems inspired by the biologic
 
 See this visual representation:
 
-<img src="https://raw.githubusercontent.com/dimaaac/dimanet/preview/docs/visualann.png">
+<img src="https://raw.githubusercontent.com/dimalmfao/dimanet/preview/docs/visualann.png">
 
 In a three-layer neural network, there are three layers of neurons: the input layer, the hidden layer, and the output layer. The input layer receives input patterns and passes them to the neurons in the hidden layer. Each neuron in the hidden layer applies a set of weights to the inputs, sums them, applies an activation function, and passes the result to the neurons in the output layer. The weights represent the strength or intensity of the input for the features being processed.
 
@@ -155,6 +155,14 @@ I recommend the [FANN library](http://leenissen.dk/fann/wp/). Another
 good library is Peter van Rossum's [Lightweight Neural
 Network](http://lwneuralnet.sourceforge.net/), which despite its name, is
 heavier and has more features than dimanet.
+
+- [comp.ai.neural-nets
+FAQ](http://www.faqs.org/faqs/ai-faq/neural-nets/part1/)
+- [tinn](https://github.com/glouw/tinn)
+- [FANN library](http://leenissen.dk/fann/wp/)
+- [Lightweight Neural
+Network](http://lwneuralnet.sourceforge.net/)
+- [DimaNet](https://github.com/dimalmfao/dimanet/)
 
 > *Add more Extra Resources here by pull requesting!*
 
