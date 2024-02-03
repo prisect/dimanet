@@ -1,6 +1,11 @@
-#pragma once
+/* dimanet.h - main dimanet header file
+ *
+ * License-Identifier: GPL-3.0
+ * Latest updated version: 1.2 */
 
 #include <stdio.h>
+
+#pragma once
 
 #ifdef __cplusplus
 extern "C" {

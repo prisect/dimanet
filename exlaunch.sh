@@ -1,10 +1,15 @@
+#!/bin/bash
+
+# exlaunch.sh - dimanet examples launcher
+#
+# License-Identifier: GPL-3.0
+# Latest updated version: 1.2
+#
 # this script is made to launch default
 # example scripts from the source code
 #
 # i wont call this a framework tho
 # lmfao
-
-#!/bin/bash
 
 echo ""
 echo -e "\033[1;36m DimaNet Example Launcher\033[0m"

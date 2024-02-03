@@ -23,20 +23,24 @@ EXAMPLES = $(EXAMPLES_DIR)/example1 $(EXAMPLES_DIR)/example2 $(EXAMPLES_DIR)/exa
 
 all: start
 
+PHONY += sigmoid
 sigmoid: CFLAGS += -Ddimanet_act=dimanet_act_sigmoid_cached
 sigmoid: all
 
+PHONY += threshold
 threshold: CFLAGS += -Ddimanet_act=dimanet_act_threshold
 threshold: all
 
+PHONY += linear
 linear: CFLAGS += -Ddimanet_act=dimanet_act_linear
 linear: all
 
+PHONY += debug
 debug: debug.o dimanet.o
 	$(CC) $(CFLAGS) -o $@ $^ $(LDLIBS)
 	@./debug
 
-build: main
+PHONY += examples
 examples: $(EXAMPLES)
 
 $(EXBUILD_DIR)/example1: $(EXBUILD_DIR)/example_1.o dimanet.o
@@ -50,28 +54,34 @@ $(EXBUILD_DIR)/example4: $(EXBUILD_DIR)/example_4.o dimanet.o
 $(EXBUILD_DIR)/example5: $(EXBUILD_DIR)/example_5.o dimanet.o
 	$(CC) $(CFLAGS) -o $(EXBUILD_DIR)/$@.o $^ $(LDLIBS)
 
+PHONY += map
 map: $(MODELS_DIR)/map/main.o dimanet.o
 	$(CC) $(CFLAGS) -o $(MOBUILD_DIR)/map $< dimanet.o $(LDLIBS)
 	@echo "Succesfully compiled 'map'."
+PHONY += wheel
 wheel: $(MODELS_DIR)/wheel/main.o dimanet.o
 	$(CC) $(CFLAGS) -o $(MOBUILD_DIR)/wheel $< dimanet.o $(LDLIBS)
 	@echo "Succesfully compiled 'wheel'."
+PHONY += book
 book: $(MODELS_DIR)/book/main.o dimanet.o
 	$(CC) $(CFLAGS) -o $(MOBUILD_DIR)/book $< dimanet.o $(LDLIBS)
 	@echo "Succesfully compiled 'book'."
 
-
+PHONY += xclean
 xclean:
 	$(RM) $(EXBUILD_DIR)/*.o
 	@echo "Succesfully cleaned examples build files."
+PHONY += mclean
 mclean:
 	$(RM) $(MOBUILD_DIR)/*.o
 	@echo "Succesfully cleaned model build files."
+PHONY += bclean
 bclean:
 	$(RM) $(EXBUILD_DIR)/*.o
 	$(RM) $(MOBUILD_DIR)/*.o
 	@echo "Succesfully cleaned all build files."
 
+PHONY += clean
 clean:
 	$(RM) *.o
 	$(RM) persist.txt
@@ -81,12 +91,14 @@ clean:
 	$(RM) $(MODELS_DIR)/*.o
 	@echo "Succesfully cleaned everything."
 
+PHONY += start
 start:
 	@echo ""
 	@echo "  To view all the DimaNet controller script commands, run:"
 	@echo "    \033[0;32mmake help"
 	@echo ""
 
+PHONY += help
 help:
 	@echo ""
 	@echo "  \033[1;30mCleaning targets:\033[1;37m"
@@ -105,4 +117,4 @@ help:
 	@echo "    help     | You should know what this does, you ran it to output this message idiot"
 	@echo ""
 
-.PHONY: start sigmoid threshold linear clean exclean build debug examples help models map wheel book
+.PHONY: $(PHONY)

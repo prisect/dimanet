@@ -1,4 +1,7 @@
-/* libdntest.h - library dimanet test */
+/* libdntest.h - library dimanet test
+ *
+ * License-Identifier: GPL-3.0
+ * Latest updated version: 1.2 */
 
 #ifndef __LIBDNTEST_H__
 #define __LIBDNTEST_H__
@@ -18,9 +21,9 @@ static int lfails = 0;
 /* Display the test results. */
 #define lresults() do {\
     if (lfails == 0) {\
-        printf("ALL TESTS PASSED (%d/%d)\n", ltests, ltests);\
+        printf("-- ALL TESTS PASSED: (%d/%d)\n", ltests, ltests);\
     } else {\
-        printf("SOME TESTS FAILED (%d/%d)\n", ltests-lfails, ltests);\
+        printf("-- SOME TESTS FAILED: (%d/%d)\n", ltests-lfails, ltests);\
     }\
 } while (0)
 
@@ -35,7 +38,6 @@ static int lfails = 0;
             (ltests-ts)-(lfails-fs), lfails-fs,\
             (int)((clock() - start) * 1000 / CLOCKS_PER_SEC));\
 } while (0)
-
 
 /* Assert a true statement. */
 #define lok(test) do {\

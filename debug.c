@@ -1,3 +1,8 @@
+/* debug.c - dimanet main debug script
+ *
+ * License-Identifier: GPL-3.0
+ * Latest updated version: 1.2 */
+
 #include "dimanet.h"
 #include "libdntest.h"
 #include <stdio.h>
@@ -58,7 +63,6 @@ void xor() {
     ann->weight[6] = .5;
     ann->weight[7] = 1;
     ann->weight[8] = -1;
-
 
     double input[4][2] = {{0, 0}, {0, 1}, {1, 0}, {1, 1}};
     double output[4] = {0, 1, 1, 0};
@@ -164,7 +168,6 @@ void persist() {
     dimanet_write(first, out);
     fclose(out);
 
-
     FILE *in = fopen("persist.txt", "r");
     dimanet *second = dimanet_read(in);
     fclose(in);
@@ -216,9 +219,9 @@ void sigmoid() {
 
 int main(int argc, char *argv[])
 {
-    printf("DimaTest TEST SUITE\n");
+    printf("-- DIMANET TEST SUITE --\n");
 
-    srand(100); //Repeatable test results.
+    srand(100); /* Repeatable test results. */
 
     lrun("basic", basic);
     lrun("xor", xor);
@@ -231,6 +234,5 @@ int main(int argc, char *argv[])
     lrun("sigmoid", sigmoid);
 
     lresults();
-
     return lfails != 0;
 }
