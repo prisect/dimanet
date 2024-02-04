@@ -14,8 +14,8 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: builddimanet
+    - name: Make & Debug
       run: make && make debug
       
-    - name: pingquestionmarkidkwhy
+    - name: PingWhyIdkWhy
       run: ping github.com
