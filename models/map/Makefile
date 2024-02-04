@@ -2,13 +2,23 @@
 # License-Identifier: GPL-3.0
 # Latest updated version: 1.2
 
+# Contributions-welcome!
+
 # DOCUMENTATION
-# ----------------------------------------
-# To see the list of typical targets, or and to view the library's
-# info, execute "make help". Comments in this file are targeted
-# only to the developer, do not expect to learn how to build or to
-# use the library.
-# More info can be located in the ./README file.
+# ---------------------------------------
+# To see the list of typical targets, or
+# and to view the library's info, execute
+# "make help". Comments in this file are
+# targeted only to the developer, do not
+# expect to learn how to build or to use
+# the library.
+#
+# More info can be located in the ./README
+
+# TODO:
+# Redirect all files, targets to the root
+# directory, in other words, replace the
+# files to the correct path they are in.
 
 CFLAGS = -Wall -Wshadow -O3 -g -march=native
 LDLIBS = -lm
@@ -18,10 +28,6 @@ MODELS_DIR = models
 BUILD_DIR = build
 EXBUILD_DIR = $(BUILD_DIR)/examples
 MOBUILD_DIR = $(BUILD_DIR)/models
-
-M1 = map
-M2 = wheel
-M3 = book
 
 EXAMPLES = $(EXAMPLES_DIR)/example1 $(EXAMPLES_DIR)/example2 $(EXAMPLES_DIR)/example3 $(EXAMPLES_DIR)/example4 $(EXAMPLES_DIR)/example5
 
@@ -58,43 +64,27 @@ $(EXBUILD_DIR)/example4: $(EXBUILD_DIR)/example_4.o dimanet.o
 $(EXBUILD_DIR)/example5: $(EXBUILD_DIR)/example_5.o dimanet.o
 	$(CC) $(CFLAGS) -o $(EXBUILD_DIR)/$@.o $^ $(LDLIBS)
 
-PHONY += $(M1)
-$(M1): $(MODELS_DIR)/$(M1)/main.o dimanet.o $(MODELS_DIR)/$(M1)/model.o
-	$(CC) $(CFLAGS) -o $(MOBUILD_DIR)/$(M1) $< dimanet.o $(MODELS_DIR)/$(M1)/model.o $(LDLIBS)
-	@echo ""
-	@echo "Successfully compiled '$(M1)'."
-	@echo "Running $(M1)"
-	@echo ""
-	@./$(MOBUILD_DIR)/$(M1)
-
-PHONY += $(M2)
-$(M2): $(MODELS_DIR)/$(M2)/main.o dimanet.o $(MODELS_DIR)/$(M2)/model.o
-	$(CC) $(CFLAGS) -o $(MOBUILD_DIR)/$(M2) $< dimanet.o $(MODELS_DIR)/$(M2)/model.o $(LDLIBS)
-	@echo ""
-	@echo "Successfully compiled '$(M2)'."
-	@echo "Running $(M2)"
-	@echo ""
-	@./$(MOBUILD_DIR)/$(M2)
-
-PHONY += $(M3)
-$(M3): $(MODELS_DIR)/$(M3)/main.o dimanet.o $(MODELS_DIR)/$(M3)/model.o
-	$(CC) $(CFLAGS) -o $(MOBUILD_DIR)/$(M3) $< dimanet.o $(MODELS_DIR)/$(M3)/model.o $(LDLIBS)
-	@echo ""
-	@echo "Successfully compiled '$(M3)'."
-	@echo "Running $(M3)"
-	@echo ""
-	@./$(MOBUILD_DIR)/$(M3)
+PHONY += map
+map: $(MODELS_DIR)/map/main.o dimanet.o
+	$(CC) $(CFLAGS) -o $(MOBUILD_DIR)/map $< dimanet.o $(LDLIBS)
+	@echo "Succesfully compiled 'map'."
+PHONY += wheel
+wheel: $(MODELS_DIR)/wheel/main.o dimanet.o
+	$(CC) $(CFLAGS) -o $(MOBUILD_DIR)/wheel $< dimanet.o $(LDLIBS)
+	@echo "Succesfully compiled 'wheel'."
+PHONY += book
+book: $(MODELS_DIR)/book/main.o dimanet.o
+	$(CC) $(CFLAGS) -o $(MOBUILD_DIR)/book $< dimanet.o $(LDLIBS)
+	@echo "Succesfully compiled 'book'."
 
 PHONY += xclean
 xclean:
 	$(RM) $(EXBUILD_DIR)/*.o
 	@echo "Succesfully cleaned examples build files."
-
 PHONY += mclean
 mclean:
 	$(RM) $(MOBUILD_DIR)/*.o
 	@echo "Succesfully cleaned model build files."
-
 PHONY += bclean
 bclean:
 	$(RM) $(EXBUILD_DIR)/*.o
