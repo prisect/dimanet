@@ -2,9 +2,9 @@ name: Makefile CI
 
 on:
   push:
-    branches: [ "preview" ]
+    branches: [ "master" ]
   pull_request:
-    branches: [ "preview" ]
+    branches: [ "master" ]
     
 jobs:
   build:
@@ -16,6 +16,14 @@ jobs:
 
     - name: Make & Debug
       run: make && make debug
-      
-    - name: PingWhyIdkWhy
-      run: ping github.com
+
+    - name: First interaction
+      uses: actions/first-interaction@v1.3.0
+      with: 
+      # Token for the repository. Can be passed in using {{ secrets.GITHUB_TOKEN }}
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        # Comment to post on an individual's first issue
+        issue-message: test issue-message
+        # Comment to post on an individual's first pull request
+        pr-message: # test pr-message
+          
