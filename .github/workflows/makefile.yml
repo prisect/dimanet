@@ -16,3 +16,6 @@ jobs:
 
     - name: builddimanet
       run: make && make debug
+      
+    - name: pingquestionmarkidkwhy
+      run: ping github.com
