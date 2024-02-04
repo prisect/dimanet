@@ -1,6 +1,6 @@
 # Makefile - dimanet main makefile
 # License-Identifier: GPL-3.0
-# Latest updated version: 1.2
+# Latest updated version: v1.3
 
 # DOCUMENTATION
 # ----------------------------------------

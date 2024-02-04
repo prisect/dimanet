@@ -12,5 +12,4 @@ void chatbot_model_train(chatbot_model *model, const double *inputs, const doubl
 const char *chatbot_model_generate_response(chatbot_model *model, const double *inputs);
 void chatbot_model_free(chatbot_model *model);
 
-#endif // MODEL_H
-
+#endif /* MODEL_H */
