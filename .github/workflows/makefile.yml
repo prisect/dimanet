@@ -25,5 +25,5 @@ jobs:
         # Comment to post on an individual's first issue
         issue-message: test issue-message
         # Comment to post on an individual's first pull request
-        pr-message: # test pr-message
+        pr-message: test pr-message
           
