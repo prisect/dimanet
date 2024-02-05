@@ -25,18 +25,14 @@ blockquote {
 
     #glow {
       text-shadow: 0 0 35px #ccd1db;
-    }
-
-    high {
-      color: #6677b3;
-    }
-
-    a {
-      color: #6677b3;
-
-    }
-
-    pre {
+}
+high {
+  color: #6677b3;
+}
+a {
+  color: #6677b3;
+}
+pre {
   padding: 9.5px;
   margin: 0 0 10px;
   font-size: 13px;
