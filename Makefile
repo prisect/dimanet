@@ -43,20 +43,28 @@ PHONY += debug
 debug: debug.o dimanet.o
 	$(CC) $(CFLAGS) -o $@ $^ $(LDLIBS)
 	@./debug
+	
+#PHONY += compile
+#compile: dimanet.o
+#	$(CC) $(CFLAGS) -o $@ $^ $(LDLIBS)
+
+# too review ^
 
 PHONY += examples
 examples: $(EXAMPLES)
+	@echo ""
+	@echo "Notice: For now, the generated files are in the examples/ directory."
 
-$(EXBUILD_DIR)/example1: $(EXBUILD_DIR)/example_1.o dimanet.o
-	$(CC) $(CFLAGS) -o $(EXBUILD_DIR)/$@.o $^ $(LDLIBS)
-$(EXBUILD_DIR)/example2: $(EXBUILD_DIR)/example_2.o dimanet.o
-	$(CC) $(CFLAGS) -o $(EXBUILD_DIR)/$@.o $^ $(LDLIBS)
-$(EXBUILD_DIR)/example3: $(EXBUILD_DIR)/example_3.o dimanet.o
-	$(CC) $(CFLAGS) -o $(EXBUILD_DIR)/$@.o $^ $(LDLIBS)
-$(EXBUILD_DIR)/example4: $(EXBUILD_DIR)/example_4.o dimanet.o
-	$(CC) $(CFLAGS) -o $(EXBUILD_DIR)/$@.o $^ $(LDLIBS)
-$(EXBUILD_DIR)/example5: $(EXBUILD_DIR)/example_5.o dimanet.o
-	$(CC) $(CFLAGS) -o $(EXBUILD_DIR)/$@.o $^ $(LDLIBS)
+$(EXAMPLES_DIR)/example1: $(EXAMPLES_DIR)/example_1.o dimanet.o
+	$(CC) $(CFLAGS) -o $@.o $^ $(LDLIBS)
+$(EXAMPLES_DIR)/example2: $(EXAMPLES_DIR)/example_2.o dimanet.o
+	$(CC) $(CFLAGS) -o $@.o $^ $(LDLIBS)
+$(EXAMPLES_DIR)/example3: $(EXAMPLES_DIR)/example_3.o dimanet.o
+	$(CC) $(CFLAGS) -o $@.o $^ $(LDLIBS)
+$(EXAMPLES_DIR)/example4: $(EXAMPLES_DIR)/example_4.o dimanet.o
+	$(CC) $(CFLAGS) -o $@.o $^ $(LDLIBS)
+$(EXAMPLES_DIR)/example5: $(EXAMPLES_DIR)/example_5.o dimanet.o
+	$(CC) $(CFLAGS) -o $@.o $^ $(LDLIBS)
 
 PHONY += $(M1)
 $(M1): $(MODELS_DIR)/$(M1)/main.o dimanet.o $(MODELS_DIR)/$(M1)/model.o
@@ -129,6 +137,7 @@ help:
 	@echo ""
 	@echo "  \033[1;30mMake targets:\033[1;37m"
 	@echo "    examples | Make all the examples"
+	@echo "    compile  | Compile the main dimanet.o"
 #	@echo "    build    | Build the main file, E.G: main.c" <-- disabled for now
 	@echo "    debug    | debug, test dimanet"
 	@echo "    <model>  | Build the model, E.G: map, wheel, book"
