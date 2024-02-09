@@ -44,6 +44,10 @@ debug: debug.o dimanet.o
 	$(CC) $(CFLAGS) -o $@ $^ $(LDLIBS)
 	@./debug
 	
+PHONY += gen
+gen: gen.c dimanet.o gen.o
+	$(CC) $(CFLAGS) -c $< -o $@
+	
 #PHONY += compile
 #compile: dimanet.o
 #	$(CC) $(CFLAGS) -o $@ $^ $(LDLIBS)
