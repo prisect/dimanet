@@ -39,6 +39,10 @@ PHONY += linear
 linear: CFLAGS += -Ddimanet_act=dimanet_act_linear
 linear: all
 
+PHONY += valgrind
+valgrind: valgrind
+	valgrind --leak-check=full --track-origins=yes --show-leak-kinds=all ./$(BUILD_DIR)/valgrind
+
 PHONY += debug
 debug: debug.o dimanet.o
 	$(CC) $(CFLAGS) -o $@ $^ $(LDLIBS)
@@ -48,9 +52,13 @@ PHONY += gen
 gen: gen.c dimanet.o gen.o
 	$(CC) $(CFLAGS) -c $< -o $@
 	
-#PHONY += compile
-#compile: dimanet.o
-#	$(CC) $(CFLAGS) -o $@ $^ $(LDLIBS)
+PHONY += compile
+compile: dimanet.o strlib.o
+	$(CC) $(CFLAGS) -o $(BUIDL_DIR)/$@ $^
+	
+PHONY += strings
+strings: main.c strlib.o
+	$(CC) $(CFLAGS) -o $@ $^
 
 # too review ^
 
