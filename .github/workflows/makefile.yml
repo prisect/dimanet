@@ -1,4 +1,4 @@
-name: Makefile CI
+name: Make Debug
 
 on:
   push:
@@ -13,9 +13,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-
-    - name: Make
-      run: make
 
     - name: Make Debug
       run: make debug
