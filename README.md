@@ -2,7 +2,9 @@
 
 # DimaNet
 
-![LICENSE](https://img.shields.io/github/license/dimalmfao/dimanet)
+![LICENSE](https://img.shields.io/github/license/dimalmfao/dimanet)![GitHub Release](https://img.shields.io/github/v/release/dimalmfao/dimanet)
+
+
 
 DimaNet, just a bad integration of AI serves as a compact, yet powerful library API designed for the implementation and training of feedforward artificial neural networks (ANN) in the classic *ANSI* C programming language. Striving for simplicity, speed, reliability, and customization, DimaNet offers a lean set of essential functions, ~~ensuring a clutter-free and efficient user experience~~.
 
