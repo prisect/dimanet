@@ -178,6 +178,12 @@ Network](http://lwneuralnet.sourceforge.net/)
 
 > *Add more Extra Resources here by pull requesting!*
 
+## Strings
+
+Simple static string library
+
+*info here*
+
 ## Yeah
 That's all... for now, but this was an awesome project to make.
 Want to see some AI related projects I made? Visit [Dima's website](https://dimaonline.fr/) to find out more!
