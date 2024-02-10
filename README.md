@@ -7,6 +7,9 @@
 
 DimaNet, just a bad integration of AI serves as a compact, yet powerful library API designed for the implementation and training of feedforward artificial neural networks (ANN) in the classic *ANSI* C programming language. Striving for simplicity, speed, reliability, and customization, DimaNet offers a lean set of essential functions, ~~ensuring a clutter-free and efficient user experience~~.
 
+ⓘ | This library is primarily developed and maintained by hobbyists and is intended for non-commercial or educational use. It is not recommended for deployment within official organizational settings or professional environments. If so, we welcome collaboration and contributions to elevate its suitability for professional use and organizational deployment.
+:---: | :---
+
 #### Notice
 
 > *If you have issues with the permission, or the make file, please report this issue at the ***Issues*** tab. (make sure to see if the project successfully built on the top of this readme file before reporting anything. if not, it might probably be an issue with your system or the make command it self)*
@@ -171,4 +174,6 @@ That's all... for now, but this was an awesome project to make.
 Want to see some AI related projects I made? Visit [Dima's website](https://dimaonline.fr/) to find out more!
 You are welcome to contribute to dimanet anytime! Thank you!
 
-```made by unsrc with love```
+``` bash
+echo "made by unsrc with love, too official to be true."
+```
