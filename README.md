@@ -2,7 +2,11 @@
 
 # DimaNet
 
-![LICENSE](https://img.shields.io/github/license/dimalmfao/dimanet)![GitHub Release](https://img.shields.io/github/v/release/dimalmfao/dimanet)
+![LICENSE](https://img.shields.io/github/license/dimalmfao/dimanet)
+![GitHub Release](https://img.shields.io/github/v/release/dimalmfao/dimanet)
+![GitHub last commit](https://img.shields.io/github/last-commit/dimalmfao/dimanet)
+
+
 
 
 
