@@ -1,9 +1,8 @@
 <img alt="DimaNet Logo didn't load :(" width="340" height="230" src="https://raw.githubusercontent.com/dimaaac/dimanet/preview/docs/logo.png" align="right" />
 
 # DimaNet
-![MASTER MAKE](https://img.shields.io/github/actions/workflow/status/dimalmfao/dimanet/makefile.yml?branch=master)
-![TEST BRANCH](https://img.shields.io/github/actions/workflow/status/dimalmfao/dimanet/makefile.yml?branch=test)
-![GitHub last commit](https://img.shields.io/github/last-commit/dimalmfao/dimanet)
+
+![LICENSE](https://img.shields.io/github/license/dimalmfao/dimanet)
 
 DimaNet, just a bad integration of AI serves as a compact, yet powerful library API designed for the implementation and training of feedforward artificial neural networks (ANN) in the classic *ANSI* C programming language. Striving for simplicity, speed, reliability, and customization, DimaNet offers a lean set of essential functions, ~~ensuring a clutter-free and efficient user experience~~.
 
@@ -14,6 +13,16 @@ DimaNet, just a bad integration of AI serves as a compact, yet powerful library 
 
 > *If you have issues with the permission, or the make file, please report this issue at the ***Issues*** tab. (make sure to see if the project successfully built on the top of this readme file before reporting anything. if not, it might probably be an issue with your system or the make command it self)*
 > *Also, search errors up instead of commiting issues concerning the commands, etc...*
+
+## Deployments
+
+Here are the list of the workflow statuses of github actions deployments.
+
+|  Name | Badge |
+| -------------- | ------------------------------------------------------- |
+| Debug   | ![MAKE DEBUG](https://img.shields.io/github/actions/workflow/status/dimalmfao/dimanet/makedebug.yml) |
+| Gen    | ![MAKE GEN](https://img.shields.io/github/actions/workflow/status/dimalmfao/dimanet/makegen.yml) |
+| Strings | ![MAKE STRINGS](https://img.shields.io/github/actions/workflow/status/dimalmfao/dimanet/makestrings.yml) |
 
 ## Building
 
