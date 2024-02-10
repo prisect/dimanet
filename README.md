@@ -171,4 +171,4 @@ That's all... for now, but this was an awesome project to make.
 Want to see some AI related projects I made? Visit [Dima's website](https://dimaonline.fr/) to find out more!
 You are welcome to contribute to dimanet anytime! Thank you!
 
-**by unsrc with love**
+```made by unsrc with love```
