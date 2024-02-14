@@ -42,6 +42,17 @@ To use DimaNet, you have to include: `dimanet.c` and `dimanet.h` as **DimaNet is
 #include <dimanet.c> // Main DimaNet
 #include <dimanet.h> // Header
 ```
+
+## Dependencies
+
+To use the Makefile to run tests and debug scripts, DimaNet requires:
+
+- `make`
+- `gcc`
+- `valgrind`
+
+(and bash ofc)
+
 ## Examples
 
 In the [`examples`](./examples/) folder, there are various examples you can experiment with. Including:
