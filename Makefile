@@ -48,6 +48,13 @@ debug: debug.o dimanet.o
 	$(CC) $(CFLAGS) -o $@ $^ $(LDLIBS)
 	@./debug
 	
+PHONY += stringstest
+stringtest:
+	make strings
+	$(CC) $(CFLAGS) -g -O0 strlibtest.c -o stringstest strlib.c
+	./stringstest
+	rm -f stringstest
+	
 PHONY += gen
 gen: gen.c dimanet.o gen.o
 	$(CC) $(CFLAGS) -c $< -o $@
