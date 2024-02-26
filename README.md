@@ -15,6 +15,9 @@ DimaNet, just a bad integration of AI serves as a compact, yet powerful library 
 ⓘ | This library is primarily developed and maintained by hobbyists and is intended for non-commercial or educational use. It is not recommended for deployment within official organizational settings or professional environments. If so, we welcome collaboration and contributions to elevate its suitability for professional use and organizational deployment.
 :---: | :---
 
+ⓘ | To use this library, extract the main two files, dimanet.h and dimanet.c. The rest is unnecessary for building your own projects.
+:---: | :---
+
 #### Notice
 
 > *If you have issues with the permission, or the make file, please report this issue at the ***Issues*** tab. (make sure to see if the project successfully built on the top of this readme file before reporting anything. if not, it might probably be an issue with your system or the make command it self)*
