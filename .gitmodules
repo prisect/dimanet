@@ -1,0 +1,3 @@
+[submodule "stringslib"]
+	path = stringslib
+	url = https://github.com/dimalmfao/stringslib
