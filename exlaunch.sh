@@ -7,9 +7,6 @@
 #
 # this script is made to launch default
 # example scripts from the source code
-#
-# i wont call this a framework tho
-# lmfao
 
 echo ""
 echo -e "\033[1;36m DimaNet Example Launcher\033[0m"
