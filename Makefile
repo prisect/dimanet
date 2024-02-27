@@ -13,6 +13,8 @@
 CFLAGS = -Wall -Wshadow -O3 -g -march=native
 LDLIBS = -lm
 
+STRINGSLIB = stringslib
+
 EXAMPLES_DIR = examples
 MODELS_DIR = models
 BUILD_DIR = build
@@ -51,7 +53,7 @@ debug: debug.o dimanet.o
 PHONY += stringstest
 stringtest:
 	make strings
-	$(CC) $(CFLAGS) -g -O0 strlibtest.c -o stringstest strlib.c
+	$(CC) $(CFLAGS) -g -O0  $(STRINGSLIB)/strlibtest.c -o  $(STRINGSLIB)/stringstest  $(STRINGSLIB)/strlib.c
 	./stringstest
 	rm -f stringstest
 	
@@ -64,7 +66,7 @@ compile: dimanet.o strlib.o
 	$(CC) $(CFLAGS) -o $(BUIDL_DIR)/$@ $^
 	
 PHONY += strings
-strings: main.c strlib.o
+strings: main.c $(STRINGSLIB)/strlib.o
 	$(CC) $(CFLAGS) -o $@ $^
 
 # too review ^
