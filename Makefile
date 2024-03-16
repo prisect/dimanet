@@ -146,6 +146,7 @@ start:
 	@echo "  To view all the DimaNet controller script commands, run:"
 	@echo "    \033[0;32mmake help"
 	@echo ""
+	make compile
 
 PHONY += help
 help:
