@@ -62,7 +62,7 @@ gen: gen.c dimanet.o gen.o
 	$(CC) $(CFLAGS) -c $< -o $@
 	
 PHONY += compile
-compile: dimanet.o strlib.o
+compile: dimanet.o # add strings.o when strings will be installed correctly
 	$(CC) $(CFLAGS) -o $(BUIDL_DIR)/$@ $^
 	
 PHONY += strings
