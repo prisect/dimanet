@@ -34,6 +34,8 @@ Here are the list of the workflow statuses of github actions deployments.
 | Strings | ![MAKE STRINGS](https://img.shields.io/github/actions/workflow/status/dimalmfao/dimanet/makestrings.yml) |
 | Valgrind | ![MAKE GEN](https://img.shields.io/github/actions/workflow/status/dimalmfao/dimanet/makevalgrind.yml) |
 
+> *Note that the main deployment that is required for the project to run is `debug`. Others can be ignored.*
+
 ## Building
 
 To build, just run:
