@@ -1,15 +1,16 @@
 #include <stdio.h>
 #include "strlib.h"
 
-
-String *string_example;
+String *myexample;
 
 int main()
 {
-    string_example = (struct String *)calloc(1, sizeof (struct String));
-    *string_example = init_string("Hi. Smth.");
+    myexample = (String *)calloc(1, sizeof(String));
+    *myexample = init_string("Hi. Something.");
 
-    deinit_string(string_example);
-    free(string_example);
+    printf("%s\n", myexample->str); // Use myexample->str instead of myexample->text
+
+    deinit_string(myexample);
+    free(myexample);
     return 0;
 }

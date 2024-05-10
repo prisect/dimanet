@@ -13,13 +13,12 @@
 CFLAGS = -Wall -Wshadow -O3 -g -march=native
 LDLIBS = -lm
 
-STRINGSLIB = stringslib
-
 EXAMPLES_DIR = examples
 MODELS_DIR = models
 BUILD_DIR = build
 EXBUILD_DIR = $(BUILD_DIR)/examples
 MOBUILD_DIR = $(BUILD_DIR)/models
+STRINGSLIB = stringslib
 
 M1 = map
 M2 = wheel
@@ -49,24 +48,18 @@ PHONY += debug
 debug: debug.o dimanet.o
 	$(CC) $(CFLAGS) -o $@ $^ $(LDLIBS)
 	@./debug
-	
-PHONY += stringstest
-stringtest:
-	make strings
-	$(CC) $(CFLAGS) -g -O0  $(STRINGSLIB)/strlibtest.c -o  $(STRINGSLIB)/stringstest  $(STRINGSLIB)/strlib.c
-	./stringstest
-	rm -f stringstest
-	
+
 PHONY += gen
 gen: gen.c dimanet.o gen.o
 	$(CC) $(CFLAGS) -c $< -o $@
 	
 PHONY += compile
-compile: dimanet.o # add strings.o when strings will be installed correctly
-	$(CC) $(CFLAGS) -o $(BUIDL_DIR)/$@ $^
-	
+compile: main.c $(STRINGSLIB)/strlib.c dimanet.o
+	$(CC) $(CFLAGS) -o $(BUILD_DIR)/main main.c $(STRINGSLIB)/strlib.c dimanet.o $(LDLIBS) -I$(STRINGSLIB)
+
+
 PHONY += strings
-strings: main.c $(STRINGSLIB)/strlib.o
+strings: main.c strlib.o
 	$(CC) $(CFLAGS) -o $@ $^
 
 # too review ^
@@ -146,7 +139,6 @@ start:
 	@echo "  To view all the DimaNet controller script commands, run:"
 	@echo "    \033[0;32mmake help"
 	@echo ""
-	make compile
 
 PHONY += help
 help:
