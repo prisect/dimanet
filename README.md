@@ -36,6 +36,15 @@ Here are the list of the workflow statuses of github actions deployments.
 
 > *Note that the main deployment that is required for the project to run is `debug`. Others can be ignored.*
 
+## Cloning
+
+To clone DimaNet, run:
+```
+git clone https://github.com/dimalmfao/dimanet --recursive --depth=1
+```
+`--recursive` to clone dependencies.
+`--depth=1` to only clone the latest commit. (time saver)
+
 ## Building
 
 To build, just run:
