@@ -8,7 +8,7 @@ int main()
     myexample = (String *)calloc(1, sizeof(String));
     *myexample = init_string("Hi. Something.");
 
-    printf("%s\n", myexample->str); // Use myexample->str instead of myexample->text
+    printf("%s\n", myexample->str); // print
 
     deinit_string(myexample);
     free(myexample);
