@@ -202,8 +202,8 @@ heavier and has more features than dimanet.
 
 - [comp.ai.neural-nets
 FAQ](http://www.faqs.org/faqs/ai-faq/neural-nets/part1/)
-- [tinn](https://github.com/glouw/tinn)
-- [FANN library](http://leenissen.dk/fann/wp/)
+- [TINN](https://github.com/glouw/tinn)
+- [FANNlib](http://leenissen.dk/fann/wp/)
 - [Lightweight Neural
 Network](http://lwneuralnet.sourceforge.net/)
 - [DimaNet](https://github.com/dimalmfao/dimanet/)
