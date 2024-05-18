@@ -143,6 +143,8 @@ dimanet *dimanet_init(int inputs, int hidden_layers, int hidden, int outputs) {
 }
 
 
+
+
 dimanet *dimanet_read(FILE *in) {
     int inputs, hidden_layers, hidden, outputs;
     int rc;

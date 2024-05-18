@@ -44,25 +44,25 @@ PHONY += valgrind
 valgrind: valgrind
 	valgrind --leak-check=full --track-origins=yes --show-leak-kinds=all ./$(BUILD_DIR)/valgrind
 
-PHONY += debug
-debug: debug.o dimanet.o
-	$(CC) $(CFLAGS) -o $@ $^ $(LDLIBS)
-	@./debug
-
 PHONY += gen
 gen: gen.c dimanet.o gen.o
 	$(CC) $(CFLAGS) -c $< -o $@
 	
-PHONY += compile
-compile: main.c $(STRINGSLIB)/strlib.c dimanet.o
+PHONY += main
+main: main.c $(STRINGSLIB)/strlib.c dimanet.o
 	$(CC) $(CFLAGS) -o $(BUILD_DIR)/main main.c $(STRINGSLIB)/strlib.c dimanet.o $(LDLIBS) -I$(STRINGSLIB)
 
+PHONY += compile
+compile: debug.o dimanet.o
+	$(CC) $(CFLAGS) -o $(BUILD_DIR)/debug $^ $(LDLIBS)
+	@./$(BUILD_DIR)/debug
 
 PHONY += strings
-strings: main.c strlib.o
-	$(CC) $(CFLAGS) -o $@ $^
-
-# too review ^
+strings: $(STRINGSLIB)/strlib.o $(STRINGSLIB)/strlibtest.o
+	$(CC) $(CFLAGS) -o $(BUILD_DIR)/strings $(STRINGSLIB)/strlib.o $(STRINGSLIB)/strlibtest.o $(LDLIBS)
+	@echo ""
+	@echo "Test output:"
+	@./$(BUILD_DIR)/strings
 
 PHONY += examples
 examples: $(EXAMPLES)
@@ -128,36 +128,41 @@ clean:
 	$(RM) *.o
 	$(RM) persist.txt
 	$(RM) main
+	$(RM) gen
+	$(RM) dimanet
+	$(RM) compile
 	$(RM) debug
 	$(RM) $(EXBUILD_DIR)/*.o
 	$(RM) $(MODELS_DIR)/*.o
+	$(RM) $(BUILD_DIR)/*.o
 	@echo "Succesfully cleaned everything."
 
 PHONY += start
 start:
 	@echo ""
 	@echo "  To view all the DimaNet controller script commands, run:"
-	@echo "    \033[0;32mmake help"
+	@echo "    make help"
 	@echo ""
 
 PHONY += help
 help:
 	@echo ""
-	@echo "  \033[1;30mCleaning targets:\033[1;37m"
+	@echo "  Cleaning targets:"
 	@echo "    clean    | Remove all compiled and generated files from the entire directory"
 	@echo "    xclean   | Remove only examples generated files"
 	@echo "    bclean   | Remove only build generated files"
 	@echo "    mclean   | Remove only build generated files"
 	@echo ""
-	@echo "  \033[1;30mMake targets:\033[1;37m"
-	@echo "    examples | Make all the examples"
-	@echo "    compile  | Compile the main dimanet.o"
-#	@echo "    build    | Build the main file, E.G: main.c" <-- disabled for now
-	@echo "    debug    | debug, test dimanet"
+	@echo "  Make targets:"
+	@echo "    examples | Compile all examples"
+	@echo "    build    | Compile dimanet"
+	@echo "    strings  | Compile stringslib"
+	@echo "    gen      | Compile gen"
+	@echo "    compile  | Build the main file"
 	@echo "    <model>  | Build the model, E.G: map, wheel, book"
 	@echo ""
-	@echo "  \033[1;30mDocumentation targets:\033[1;37m"
-	@echo "    help     | You should know what this does, you ran it to output this message idiot"
+	@echo "  Documentation targets:"
+	@echo "    help     | A command for dummies"
 	@echo ""
 
 .PHONY: $(PHONY)
