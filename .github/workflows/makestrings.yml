@@ -16,5 +16,3 @@ jobs:
 
     - name: Make Strings
       run: make strings
-    - name: Make Test Stings
-      run: make stringstest
