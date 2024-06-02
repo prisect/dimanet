@@ -113,8 +113,8 @@ $(M3): $(MODELS_DIR)/$(M3)/main.o dimanet.o $(MODELS_DIR)/$(M3)/model.o
 
 PHONY += install
 install:
-	install -D -m 0644 dimanet.o "$pkgdir/usr/local/lib/dimanet.o"
-	install -D -m 0644 dimanet.h "$pkgdir/usr/local/include/dimanet.h"
+	install -D -m 0644 dimanet.o "$(DESTDIR)$(LIB_DIR)/dimanet.o"
+	install -D -m 0644 dimanet.h "$(DESTDIR)$(INC_DIR)/dimanet.h"
 
 PHONY += uninstall
 uninstall:
