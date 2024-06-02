@@ -213,13 +213,7 @@ Network](http://lwneuralnet.sourceforge.net/)
 ## Strings
 
 Simple static string library
-
-*info here*
-
-## Yeah
-That's all... for now, but this was an awesome project to make.
-Want to see some AI related projects I made? Visit [Dima's website](https://dimaonline.fr/) to find out more!
-You are welcome to contribute to dimanet anytime! Thank you!
+See more at https://github.com/dimalmfao/stringslib/
 
 ``` bash
 echo "made by unsrc with love, too official to be true."
