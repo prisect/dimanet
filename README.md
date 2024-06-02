@@ -216,5 +216,5 @@ Simple static string library
 See more at https://github.com/dimalmfao/stringslib/
 
 ``` bash
-echo "made by unsrc with love, too official to be true."
+echo "made by unsrced with love, too official to be true."
 ```
