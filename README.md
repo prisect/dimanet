@@ -1,4 +1,4 @@
-<img alt="DimaNet Logo didn't load :(" width="340" height="230" src="https://raw.githubusercontent.com/dimaaac/dimanet/preview/docs/logo.png" align="right" />
+<img alt="DimaNet Logo didn't load :(" width="390" height="270" src="https://raw.githubusercontent.com/dimaaac/dimanet/preview/docs/logo.png" align="right" />
 
 # DimaNet
 
@@ -20,7 +20,7 @@ DimaNet, just a bad integration of AI serves as a compact, yet powerful library 
 
 #### Notice
 
-> *If you have issues with the permission, or the make file, please report this issue at the ***Issues*** tab. (make sure to see if the project successfully built on the top of this readme file before reporting anything. if not, it might probably be an issue with your system or the make command it self)*
+> *If you have issues with the permission, or the make file, please report it at the ***Issues*** tab. (make sure to see if the project successfully built on the top of this readme file before reporting anything. if not, it might probably be an issue with your system or the make command it self)*
 > *Also, search errors up instead of commiting issues concerning the commands, etc...*
 
 ## Deployments
@@ -36,9 +36,16 @@ Here are the list of the workflow statuses of github actions deployments.
 
 > *Note that the main deployment that is required for the project to run is `debug`. Others can be ignored.*
 
+## Direct Installation (Arch Only)
+If you're using [Arch Linux](https://archlinux.org/), you can easily install the [dimanet library](https://aur.archlinux.org/packages/dimanet) through the [AUR](https://aur.archlinux.org/). Use the [yay](https://aur.archlinux.org/packages/yay) AUR helper by running the following command:
+```
+$ yay -S dimanet
+```
+> *Note that this will only build and install the libraries on your system.*
+
 ## Cloning
 
-To clone DimaNet, run:
+Alternativly, to clone DimaNet, run:
 ```
 git clone https://github.com/dimalmfao/dimanet --recursive --depth=1
 ```
@@ -65,8 +72,6 @@ To use the Makefile to run tests and debug scripts, DimaNet requires:
 - `make`
 - `gcc`
 - `valgrind`
-
-(and bash ofc)
 
 ## Examples
 
