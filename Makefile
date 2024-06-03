@@ -117,19 +117,14 @@ lib: dimanet.o
 	# Or use the following for shared library:
 	# $(CC) -shared -o libdimanet.so dimanet.o
 
-PHONY += install-lib
-install-lib:
+PHONY += install
+install:
 	install -D -m 0644 libdimanet.a "$(DESTDIR)$(LIB_DIR)/libdimanet.a"
 	install -D -m 0644 dimanet.h "$(DESTDIR)$(INC_DIR)/dimanet.h"
 
 PHONY += package
-package: install-lib
-	# Package creation steps here
-
-PHONY += install
-install:
-	install -D -m 0644 dimanet.o "$(DESTDIR)$(LIB_DIR)/dimanet.o"
-	install -D -m 0644 dimanet.h "$(DESTDIR)$(INC_DIR)/dimanet.h"
+package: install
+	# package
 
 PHONY += uninstall
 uninstall:
