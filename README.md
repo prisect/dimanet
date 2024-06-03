@@ -47,7 +47,7 @@ $ yay -S dimanet
 
 Alternativly, to clone DimaNet, run:
 ```
-git clone https://github.com/dimalmfao/dimanet --recursive --depth=1
+$ git clone https://github.com/dimalmfao/dimanet --recursive --depth=1
 ```
 `--recursive` to clone dependencies.
 `--depth=1` to only clone the latest commit. (time saver)
@@ -56,7 +56,7 @@ git clone https://github.com/dimalmfao/dimanet --recursive --depth=1
 
 To build, just run:
 ```bash
-make
+$ make
 ```
 ## Adding DimaNet
 To use DimaNet, you have to include: `dimanet.c` and `dimanet.h` as **DimaNet is locally contained**. Include the following files with 
