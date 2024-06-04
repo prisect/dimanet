@@ -122,14 +122,10 @@ install:
 	install -D -m 0644 libdimanet.a "$(DESTDIR)$(LIB_DIR)/libdimanet.a"
 	install -D -m 0644 dimanet.h "$(DESTDIR)$(INC_DIR)/dimanet.h"
 
-PHONY += package
-package: install
-	# package
-
 PHONY += uninstall
 uninstall:
-	rm -f $(LIB_DIR)/dimanet.o
-	rm -f $(INC_DIR)/dimanet.h
+	rm -f $(DESTDIR)$(LIB_DIR)/libdimanet.a
+	rm -f $(DESTDIR)$(INC_DIR)/dimanet.h
 
 PHONY += xclean
 xclean:
