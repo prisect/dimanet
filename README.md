@@ -1,4 +1,4 @@
-<img alt="DimaNet Logo didn't load :(" width="390" height="270" src="https://raw.githubusercontent.com/dimaaac/dimanet/preview/misc/logo.png" align="right" />
+<img alt="DimaNet Logo didn't load :(" width="390" height="270" src="https://raw.githubusercontent.com/dimaaac/dimanet/master/misc/logo.png" align="right" />
 
 # DimaNet
 
@@ -91,7 +91,7 @@ Artificial Neural Networks (ANNs) are computing systems inspired by the biologic
 
 See this visual representation:
 
-<img src="https://raw.githubusercontent.com/dimalmfao/dimanet/preview/misc/visualann.png">
+<img src="https://raw.githubusercontent.com/dimalmfao/dimanet/master/misc/visualann.png">
 
 In a three-layer neural network, there are three layers of neurons: the input layer, the hidden layer, and the output layer. The input layer receives input patterns and passes them to the neurons in the hidden layer. Each neuron in the hidden layer applies a set of weights to the inputs, sums them, applies an activation function, and passes the result to the neurons in the output layer. The weights represent the strength or intensity of the input for the features being processed.
 
