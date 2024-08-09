@@ -36,7 +36,7 @@ Here are the list of the workflow statuses of github actions deployments.
 
 > *Note that the main deployment that is required for the project to run is `debug`. Others can be ignored.*
 
-## Direct Installation (Arch Only)
+## Automated Installation (Arch Only)
 If you're using [Arch Linux](https://archlinux.org/), you can easily install the [dimanet library](https://aur.archlinux.org/packages/dimanet) through the [AUR](https://aur.archlinux.org/). Use the [yay](https://aur.archlinux.org/packages/yay) AUR helper by running the following command:
 ```
 $ yay -S dimanet
