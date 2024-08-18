@@ -23,7 +23,7 @@ DimaNet, just a bad integration of AI serves as a compact, yet powerful library 
 
 Here are the list of the workflow statuses of github actions deployments.
 
-|  Name | Badge |
+|  Name | Status |
 | -------------- | ------------------------------------------------------- |
 | Debug   | ![MAKE DEBUG](https://img.shields.io/github/actions/workflow/status/dimalmfao/dimanet/makedebug.yml) |
 | Gen    | ![MAKE GEN](https://img.shields.io/github/actions/workflow/status/dimalmfao/dimanet/makegen.yml) |
