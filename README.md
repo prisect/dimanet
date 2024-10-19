@@ -1,5 +1,5 @@
 
-# DimaNet <img alt="DimaNet Logo didn't load :(" width="390" height="270" src="https://raw.githubusercontent.com/dimaaac/dimanet/master/misc/logo.png" align="right" />
+# DimaNet <img alt="DimaNet Logo didn't load :(" width="390" height="270" src="/misc/logo.png" align="right" />
 
 ![LICENSE](https://img.shields.io/github/license/dimalmfao/dimanet)
 ![GitHub Release](https://img.shields.io/github/v/release/dimalmfao/dimanet)
