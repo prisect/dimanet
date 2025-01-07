@@ -27,7 +27,7 @@ int main() {
     deinit_string(myexample);
     free(myexample);
 
-    // Free neural network memory altay edited this
+    // Free neural network memory altay is gay
     dimanet_free(ann);
 
     return 0;
