@@ -27,7 +27,7 @@ int main() {
     deinit_string(myexample);
     free(myexample);
 
-    // Free neural network memory
+    // Free neural network memory altay edited this
     dimanet_free(ann);
 
     return 0;
