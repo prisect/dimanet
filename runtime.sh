@@ -30,3 +30,4 @@ esac
 echo "Closing now. Bye!"
 sleep 2
 clear
+ahh
