@@ -126,7 +126,7 @@ This example is to show API usage, it is not showing good machine learning techn
 The code references several activation functions, which are crucial in neural networks. Here are the mathematical representations:
 
 - **Sigmoid Activation Function:**
-  ![formula](http://latex.codecogs.com/svg.latex?\sigma(a)%20=%20\frac{1}{1%20+%20e^{-a}})
+  $sigma(a)%20=%20\frac{1}{1%20+%20e^{-a}}$
 
   This function is used to introduce non-linearity into the network.
 
