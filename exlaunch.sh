@@ -2,7 +2,7 @@
 
 # exlaunch.sh - dimanet examples launcher
 #
-# License-Identifier: GPL-3.0
+# License-Identifier: GPL-3.0fghfghfghfghgfhfghfghfghg
 # Latest updated version: 1.2
 #
 # this script is made to launch default
