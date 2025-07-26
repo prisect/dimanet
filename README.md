@@ -1,9 +1,9 @@
 
 # DimaNet <img alt="DimaNet Logo didn't load :(" width="390" height="270" src="misc/logo.png" align="right" />
 
-![LICENSE](https://img.shields.io/github/license/dimalmfao/dimanet)
-![GitHub Release](https://img.shields.io/github/v/release/dimalmfao/dimanet)
-![GitHub last commit](https://img.shields.io/github/last-commit/dimalmfao/dimanet)
+![LICENSE](https://img.shields.io/github/license/prisect/dimanet)
+![GitHub Release](https://img.shields.io/github/v/release/prisect/dimanet)
+![GitHub last commit](https://img.shields.io/github/last-commit/prisect/dimanet)
 
 
 DimaNet, just a bad integration of AI serves as a compact, yet powerful library API designed for the implementation and training of feedforward artificial neural networks (ANN) in the classic *ANSI* C programming language. Striving for ~~simplicity~~, speed, ~~reliability~~, and customization, DimaNet offers a lean set of essential functions, ~~ensuring a clutter-free and efficient user experience~~.
@@ -25,10 +25,10 @@ Here are the list of the workflow statuses of github actions deployments.
 
 |  Name | Status |
 | -------------- | ------------------------------------------------------- |
-| Debug   | ![MAKE DEBUG](https://img.shields.io/github/actions/workflow/status/dimalmfao/dimanet/makedebug.yml) |
-| Gen    | ![MAKE GEN](https://img.shields.io/github/actions/workflow/status/dimalmfao/dimanet/makegen.yml) |
-| Strings | ![MAKE STRINGS](https://img.shields.io/github/actions/workflow/status/dimalmfao/dimanet/makestrings.yml) |
-| Valgrind | ![MAKE GEN](https://img.shields.io/github/actions/workflow/status/dimalmfao/dimanet/makevalgrind.yml) |
+| Debug   | ![MAKE DEBUG](https://img.shields.io/github/actions/workflow/status/prisect/dimanet/makedebug.yml) |
+| Gen    | ![MAKE GEN](https://img.shields.io/github/actions/workflow/status/prisect/dimanet/makegen.yml) |
+| Strings | ![MAKE STRINGS](https://img.shields.io/github/actions/workflow/status/prisect/dimanet/makestrings.yml) |
+| Valgrind | ![MAKE GEN](https://img.shields.io/github/actions/workflow/status/prisect/dimanet/makevalgrind.yml) |
 
 > *Note that the main deployment that is required for the project to run is `debug`. Others can be ignored.*
 
@@ -43,7 +43,7 @@ $ yay -S dimanet
 
 Alternativly, to clone DimaNet, run:
 ```
-$ git clone https://github.com/dimalmfao/dimanet --recursive --depth=1
+$ git clone https://github.com/prisect/dimanet --recursive --depth=1
 ```
 `--recursive` to clone dependencies.
 `--depth=1` to only clone the latest commit. (time saver)
@@ -88,7 +88,7 @@ Artificial Neural Networks (ANNs) are computing systems inspired by the biologic
 
 See this visual representation:
 
-<img src="https://raw.githubusercontent.com/dimalmfao/dimanet/master/misc/visualann.png">
+<img src="https://raw.githubusercontent.com/prisect/dimanet/master/misc/visualann.png">
 
 In a three-layer neural network, there are three layers of neurons: the input layer, the hidden layer, and the output layer. The input layer receives input patterns and passes them to the neurons in the hidden layer. Each neuron in the hidden layer applies a set of weights to the inputs, sums them, applies an activation function, and passes the result to the neurons in the output layer. The weights represent the strength or intensity of the input for the features being processed.
 
@@ -312,14 +312,14 @@ FAQ](http://www.faqs.org/faqs/ai-faq/neural-nets/part1/)
 - [FANNlib](http://leenissen.dk/fann/wp/)
 - [Lightweight Neural
 Network](http://lwneuralnet.sourceforge.net/)
-- [DimaNet](https://github.com/dimalmfao/dimanet/)
+- [DimaNet](https://github.com/prisect/dimanet/)
 
 > *Add more Extra Resources here by pull requesting!*
 
 ## Strings
 
 Simple static string library
-See more at https://github.com/dimalmfao/stringslib/
+See more at https://github.com/prisect/stringslib/
 
 ``` bash
 echo "made by unsrced with love, too official to be true."
