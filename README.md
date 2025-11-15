@@ -1,7 +1,6 @@
 
 # DimaNet <img alt="DimaNet Logo didn't load :(" width="390" height="270" src="misc/logo.png" align="right" />
 
-![GitHub License](https://img.shields.io/github/license/prisect/dimanet)
 ![GitHub Release](https://img.shields.io/github/v/release/prisect/dimanet)
 ![GitHub last commit](https://img.shields.io/github/last-commit/prisect/dimanet)
 ![GitHub Issues or Pull Requests](https://img.shields.io/github/issues/prisect/dimanet)
@@ -10,16 +9,9 @@
 
 DimaNet, just a bad integration of AI serves as a compact, yet powerful library API designed for the implementation and training of feedforward artificial neural networks (ANN) in the classic *ANSI* C programming language. Striving for ~~simplicity~~, speed, ~~reliability~~, and customization, DimaNet offers a lean set of essential functions, ~~ensuring a clutter-free and efficient user experience~~.
 
-ⓘ | This library is primarily developed and maintained by hobbyists and is intended for non-commercial or educational use. It is not recommended for deployment within official organizational settings or professional environments. If so, we welcome collaboration and contributions to elevate its suitability for professional use and organizational deployment.
-:---: | :---
-
-ⓘ | To use this library, extract the main two files, dimanet.h and dimanet.c. The rest is unnecessary for building your own projects.
-:---: | :---
-
-#### Notice
-
-> *If you have issues with the permission, or the make file, please report it at the ***Issues*** tab. (make sure to see if the project successfully built on the top of this readme file before reporting anything. if not, it might probably be an issue with your system or the make command it self)*
-> *Also, search errors up instead of commiting issues concerning the commands, etc...*
+> [!NOTE]
+> To use this library, extract the main two files, dimanet.h and dimanet.c. 
+> The rest is unnecessary for building your own projects.
 
 ## Deployments
 
@@ -28,20 +20,17 @@ Here are the list of the workflow statuses of github actions deployments.
 |  Name | Status |
 | -------------- | ------------------------------------------------------- |
 | Debug   | ![MAKE DEBUG](https://img.shields.io/github/actions/workflow/status/prisect/dimanet/makedebug.yml) |
-| Gen    | ![MAKE GEN](https://img.shields.io/github/actions/workflow/status/prisect/dimanet/makegen.yml) |
-| Strings | ![MAKE STRINGS](https://img.shields.io/github/actions/workflow/status/prisect/dimanet/makestrings.yml) |
-| Valgrind | ![MAKE GEN](https://img.shields.io/github/actions/workflow/status/prisect/dimanet/makevalgrind.yml) |
+| Main    | ![MAKE COMPILE](https://img.shields.io/github/actions/workflow/status/prisect/dimanet/makecompile.yml) |
 
-> *Note that the main deployment that is required for the project to run is `debug`. Others can be ignored.*
-
-## Automated Installation (Arch Only)
+## Setup
+### Automated Installation (Arch Only)
 If you're using [Arch Linux](https://archlinux.org/), you can easily install [dimanet](https://aur.archlinux.org/packages/dimanet) through the [AUR](https://aur.archlinux.org/). Use the [yay](https://aur.archlinux.org/packages/yay) AUR helper by running the following command:
 
 ```
 yay -S dimanet
 ```
 
-## Building
+### Building
 
 Alternativly, to build from source:
 ```
@@ -49,7 +38,7 @@ git clone https://github.com/prisect/dimanet --recursive --depth=1
 make
 ```
 
-## Adding DimaNet
+### Adding DimaNet
 To use DimaNet, you have to include: `dimanet.c` and `dimanet.h` as DimaNet is locally contained. Include the following files with:
 
 ```c
@@ -57,7 +46,7 @@ To use DimaNet, you have to include: `dimanet.c` and `dimanet.h` as DimaNet is l
 #include <dimanet.h> // Header
 ```
 
-## Dependencies
+### Dependencies
 
 To use the Makefile to run tests and debug scripts, DimaNet requires:
 
