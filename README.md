@@ -1,9 +1,11 @@
 
 # DimaNet <img alt="DimaNet Logo didn't load :(" width="390" height="270" src="misc/logo.png" align="right" />
 
-![LICENSE](https://img.shields.io/github/license/prisect/dimanet)
+![GitHub License](https://img.shields.io/github/license/prisect/dimanet)
 ![GitHub Release](https://img.shields.io/github/v/release/prisect/dimanet)
 ![GitHub last commit](https://img.shields.io/github/last-commit/prisect/dimanet)
+![GitHub Issues or Pull Requests](https://img.shields.io/github/issues/prisect/dimanet)
+![GitHub Issues or Pull Requests](https://img.shields.io/github/issues-pr/prisect/dimanet)
 
 
 DimaNet, just a bad integration of AI serves as a compact, yet powerful library API designed for the implementation and training of feedforward artificial neural networks (ANN) in the classic *ANSI* C programming language. Striving for ~~simplicity~~, speed, ~~reliability~~, and customization, DimaNet offers a lean set of essential functions, ~~ensuring a clutter-free and efficient user experience~~.
@@ -33,29 +35,23 @@ Here are the list of the workflow statuses of github actions deployments.
 > *Note that the main deployment that is required for the project to run is `debug`. Others can be ignored.*
 
 ## Automated Installation (Arch Only)
-If you're using [Arch Linux](https://archlinux.org/), you can easily install the [dimanet library](https://aur.archlinux.org/packages/dimanet) through the [AUR](https://aur.archlinux.org/). Use the [yay](https://aur.archlinux.org/packages/yay) AUR helper by running the following command:
-```
-$ yay -S dimanet
-```
-> *Note that this will only build and install the libraries on your system.*
+If you're using [Arch Linux](https://archlinux.org/), you can easily install [dimanet](https://aur.archlinux.org/packages/dimanet) through the [AUR](https://aur.archlinux.org/). Use the [yay](https://aur.archlinux.org/packages/yay) AUR helper by running the following command:
 
-## Cloning
-
-Alternativly, to clone DimaNet, run:
 ```
-$ git clone https://github.com/prisect/dimanet --recursive --depth=1
+yay -S dimanet
 ```
-`--recursive` to clone dependencies.
-`--depth=1` to only clone the latest commit. (time saver)
 
 ## Building
 
-To build, just run:
-```bash
-$ make
+Alternativly, to build from source:
 ```
+git clone https://github.com/prisect/dimanet --recursive --depth=1
+make
+```
+
 ## Adding DimaNet
-To use DimaNet, you have to include: `dimanet.c` and `dimanet.h` as **DimaNet is locally contained**. Include the following files with 
+To use DimaNet, you have to include: `dimanet.c` and `dimanet.h` as DimaNet is locally contained. Include the following files with:
+
 ```c
 #include <dimanet.c> // Main DimaNet
 #include <dimanet.h> // Header
@@ -80,7 +76,6 @@ In the [`examples`](./examples/) folder, there are various examples you can expe
 - [`example_5.c`](./examples/example_5.c) - Visualization of Neural Network Approximation.
 
 `persist.txt` is basically last saved training.
-> *It would be really appreciated to contribute and to add example files :)*
 
 ## How it works
 
@@ -121,110 +116,6 @@ dimanet_free(ann);
 ```
 
 This example is to show API usage, it is not showing good machine learning techniques. In a real application you would likely want to learn on the test data in a random order. You would also want to monitor the learning to prevent over-fitting.
-
-### 1. **Activation Functions**
-The code references several activation functions, which are crucial in neural networks. Here are the mathematical representations:
-
-- **Sigmoid Activation Function:**
-  $sigma(a)%20=%20\frac{1}{1%20+%20e^{-a}}$
-
-  This function is used to introduce non-linearity into the network.
-
-- **Threshold Activation Function:**
-  ![formula](http://latex.codecogs.com/svg.latex?f(a)%20=%20\begin{cases}%201%20&%20\text{if%20}%20a%20\geq%200%20\\%200%20&%20\text{if%20}%20a%20<%200%20\end{cases})
-  
-  This is a binary step function that outputs 1 if the input is greater than or equal to zero, otherwise 0.
-
-- **Linear Activation Function:**
-  ![formula](http://latex.codecogs.com/svg.latex?f(a)%20=%20a)
-  
-  This function simply returns the input as the output, providing no transformation.
-
----
-
-### 2. **Feedforward Calculation**
-The feedforward process calculates the output of the neural network given an input. For a single neuron, the output \( y \) is calculated as:
-![formula](http://latex.codecogs.com/svg.latex?y%20=%20f\left(\sum_{i=1}^{n}%20w_i%20x_i%20+%20b\right))
-
-where:
-- \( f \) is the activation function,
-- \( w_i \) are the weights,
-- \( x_i \) are the inputs,
-- \( b \) is the bias term.
-
----
-
-### 3. **Backpropagation**
-Backpropagation is used to update the weights of the network during training. The weight update rule is:
-![formula](http://latex.codecogs.com/svg.latex?w_i%20%3D%20w_i%20-%20%5Ceta%20%5Cfrac%7B%5Cpartial%20E%7D%7B%5Cpartial%20w_i%7D)
-
-where:
-- \( \eta \) is the learning rate,
-- \( \frac{\partial E}{\partial w_i} \) is the gradient of the error with respect to the weight \( w_i \).
-
----
-
-### 4. **Random Weight Initialization**
-The weights are initialized randomly, typically using a uniform distribution between 0 and 1:
-![formula](http://latex.codecogs.com/svg.latex?w_i%20=%20\text{random}(0,%201))
-
-This helps in breaking symmetry and ensuring that different neurons learn different features.
-
----
-
-### 5. **Delta Calculation**
-The delta for each neuron is calculated as:
-![formula](http://latex.codecogs.com/svg.latex?\delta_j%20=%20f'(a_j)%20\sum_{k}%20\delta_k%20w_{jk})
-
-where:
-- \( \delta_j \) is the delta for neuron \( j \),
-- \( f'(a_j) \) is the derivative of the activation function,
-- \( \delta_k \) is the delta for the next layer's neuron \( k \),
-- \( w_{jk} \) is the weight connecting neuron \( j \) to neuron \( k \).
-
----
-
-### 6. **Error Calculation**
-The error \( E \) for a single training example is often calculated using Mean Squared Error (MSE):
-![formula](http://latex.codecogs.com/svg.latex?E%20=%20\frac{1}{2}%20\sum_{k}%20(y_k%20-%20t_k)^2)
-
-where:
-- \( y_k \) is the predicted output,
-- \( t_k \) is the target output.
-
----
-
-### 7. **Weight Update Rule**
-The weights are updated using the gradient descent rule:
-![formula](http://latex.codecogs.com/svg.latex?w_{ij}%20=%20w_{ij}%20-%20\eta%20\delta_j%20x_i)
-
-where:
-- \( \eta \) is the learning rate,
-- \( \delta_j \) is the delta for neuron \( j \),
-- \( x_i \) is the input to the weight \( w_{ij} \).
-
----
-
-### 8. **Total Weights Calculation**
-The total number of weights in the network is calculated as:
-![formula](http://latex.codecogs.com/svg.latex?\text{total\_weights}%20=%20(\text{inputs}%20\times%20\text{hidden})%20+%20(\text{hidden}%20\times%20\text{hidden})%20\times%20(\text{hidden\_layers}%20-%201)%20+%20(\text{hidden}%20\times%20\text{outputs}))
-
-This formula accounts for the weights between the input layer and the first hidden layer, between hidden layers, and between the last hidden layer and the output layer.
-
----
-
-### 9. **Total Neurons Calculation**
-The total number of neurons in the network is calculated as:
-![formula](http://latex.codecogs.com/svg.latex?\text{total\_neurons}%20=%20\text{inputs}%20+%20(\text{hidden}%20\times%20\text{hidden\_layers})%20+%20\text{outputs})
-
-This includes the input neurons, hidden neurons, and output neurons.
-
----
-
-### 10. **Random Number Generation**
-The code uses a uniform random number generator to initialize weights:
-![formula](http://latex.codecogs.com/svg.latex?\text{dimanet\_RANDOM()}%20=%20\frac{\text{rand()}}{\text{RAND\_MAX}})
-This generates a random number between 0 and 1.
 
 ## Usage
 
@@ -286,13 +177,6 @@ double const *dimanet_run(dimanet const *ann,
 Call `dimanet_run()` on a trained ANN to run a feed-forward pass on a given set of inputs. `dimanet_run()`
 will provide a pointer to the array of predicted outputs (of `ann->outputs` length).
 
-## Hints
-
-- Every functions start with `dimanet_`.
-- Feel free to modify the code to your liking.
-
-> *Add more Hints here by pull requesting!*
-
 ## Extra Resources
 
 The [comp.ai.neural-nets
@@ -312,15 +196,5 @@ FAQ](http://www.faqs.org/faqs/ai-faq/neural-nets/part1/)
 - [FANNlib](http://leenissen.dk/fann/wp/)
 - [Lightweight Neural
 Network](http://lwneuralnet.sourceforge.net/)
-- [DimaNet](https://github.com/prisect/dimanet/)
+- [StringsLib](https://github.com/prisect/stringslib/)
 
-> *Add more Extra Resources here by pull requesting!*
-
-## Strings
-
-Simple static string library
-See more at https://github.com/prisect/stringslib/
-
-``` bash
-echo "made by unsrced with love, too official to be true."
-```
