@@ -1,4 +1,4 @@
-name: Make Debug
+name: Make Compile
 
 on:
   push:
