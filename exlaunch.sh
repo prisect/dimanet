@@ -18,8 +18,6 @@ echo " 3 - ex3::Loads and runs an ANN from a file"
 echo " 4 - ex4::IRIS data-set using Backpropagation training"
 echo " 5 - ex5::Visualization of ANN Approximation"
 echo ""
-echo -e "\033[1;33mNOTICE:\033[0;31m RUN MAKE BEFORE EXECUTING THIS SCRIPT\033[0m"
-echo ""
 
 while true; do
     read -p "1-5: -$ " choice

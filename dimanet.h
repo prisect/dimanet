@@ -1,11 +1,7 @@
-/* dimanet.h - main dimanet header file
- *
- * License-Identifier: GPL-3.0
- * Latest updated version: 1.2 */
+#ifndef dimanet_H
+#define dimanet_H
 
 #include <stdio.h>
-
-#pragma once
 
 #ifdef __cplusplus
 extern "C" {
@@ -46,6 +42,9 @@ typedef struct dimanet {
     /* Stores delta of each hidden and output neuron (total_neurons - inputs long). */
     double *delta;
 
+    /* Leaky ReLU parameter */
+    double leaky_relu_alpha;
+
 } dimanet;
 
 /* Creates and returns a new ann. */
@@ -78,9 +77,17 @@ double dimanet_act_sigmoid_cached(const dimanet *ann, double a);
 double dimanet_act_threshold(const dimanet *ann, double a);
 double dimanet_act_linear(const dimanet *ann, double a);
 
+/* New modern activation functions */
+double dimanet_act_tanh(const dimanet *ann, double a);
+double dimanet_act_relu(const dimanet *ann, double a);
+double dimanet_act_leaky_relu(const dimanet *ann, double a);
+
+/* Function to set activation functions */
+void dimanet_set_activation_functions(dimanet *ann, dimanet_actfun hidden, dimanet_actfun output);
+void dimanet_set_leaky_relu_alpha(dimanet *ann, double alpha);
 
 #ifdef __cplusplus
 }
 #endif
 
-/* no way */
+#endif /*dimanet_H*/

@@ -1,13 +1,4 @@
 # Makefile - dimanet main makefile
-# License-Identifier: GPL-3.0
-# Latest updated version: v1.3
-
-# DOCUMENTATION
-# ----------------------------------------
-# To see the list of typical targets, or and to view the library's
-# info, execute "make help". Comments in this file are targeted
-# only to the developer, do not expect to learn how to build or to
-# use the library.
 # More info can be located in the ./README file.
 
 CFLAGS = -Wall -Wshadow -O3 -g -march=native
@@ -32,6 +23,12 @@ INC_DIR = $(INSTALL_DIR)/include
 
 all: start
 
+# -----------------------------
+# ensure build directories exist
+$(BUILD_DIR) $(EXBUILD_DIR) $(MOBUILD_DIR):
+	@mkdir -p $@
+
+# -----------------------------
 PHONY += sigmoid
 sigmoid: CFLAGS += -Ddimanet_act=dimanet_act_sigmoid_cached
 sigmoid: all
@@ -53,16 +50,16 @@ gen: gen.c dimanet.o gen.o
 	$(CC) $(CFLAGS) -c $< -o $@
 
 PHONY += main
-main: main.c $(STRINGSLIB)/strlib.c dimanet.o
+main: $(BUILD_DIR) main.c $(STRINGSLIB)/strlib.c dimanet.o
 	$(CC) $(CFLAGS) -o $(BUILD_DIR)/main main.c $(STRINGSLIB)/strlib.c dimanet.o $(LDLIBS) -I$(STRINGSLIB)
 
 PHONY += compile
-compile: debug.o dimanet.o
-	$(CC) $(CFLAGS) -o $(BUILD_DIR)/debug $^ $(LDLIBS)
+compile: $(BUILD_DIR) debug.o dimanet.o
+	$(CC) $(CFLAGS) -o $(BUILD_DIR)/debug debug.o dimanet.o $(LDLIBS)
 	@./$(BUILD_DIR)/debug
 
 PHONY += strings
-strings: $(STRINGSLIB)/strlib.o $(STRINGSLIB)/strlibtest.o
+strings: $(BUILD_DIR) $(STRINGSLIB)/strlib.o $(STRINGSLIB)/strlibtest.o
 	$(CC) $(CFLAGS) -o $(BUILD_DIR)/strings $(STRINGSLIB)/strlib.o $(STRINGSLIB)/strlibtest.o $(LDLIBS)
 	@echo ""
 	@echo "Test output:"
@@ -85,7 +82,7 @@ $(EXAMPLES_DIR)/example5: $(EXAMPLES_DIR)/example_5.o dimanet.o
 	$(CC) $(CFLAGS) -o $@.o $^ $(LDLIBS)
 
 PHONY += $(M1)
-$(M1): $(MODELS_DIR)/$(M1)/main.o dimanet.o $(MODELS_DIR)/$(M1)/model.o
+$(M1): $(MOBUILD_DIR) $(MODELS_DIR)/$(M1)/main.o dimanet.o $(MODELS_DIR)/$(M1)/model.o
 	$(CC) $(CFLAGS) -o $(MOBUILD_DIR)/$(M1) $< dimanet.o $(MODELS_DIR)/$(M1)/model.o $(LDLIBS)
 	@echo ""
 	@echo "Successfully compiled '$(M1)'."
@@ -94,7 +91,7 @@ $(M1): $(MODELS_DIR)/$(M1)/main.o dimanet.o $(MODELS_DIR)/$(M1)/model.o
 	@./$(MOBUILD_DIR)/$(M1)
 
 PHONY += $(M2)
-$(M2): $(MODELS_DIR)/$(M2)/main.o dimanet.o $(MODELS_DIR)/$(M2)/model.o
+$(M2): $(MOBUILD_DIR) $(MODELS_DIR)/$(M2)/main.o dimanet.o $(MODELS_DIR)/$(M2)/model.o
 	$(CC) $(CFLAGS) -o $(MOBUILD_DIR)/$(M2) $< dimanet.o $(MODELS_DIR)/$(M2)/model.o $(LDLIBS)
 	@echo ""
 	@echo "Successfully compiled '$(M2)'."
@@ -103,7 +100,7 @@ $(M2): $(MODELS_DIR)/$(M2)/main.o dimanet.o $(MODELS_DIR)/$(M2)/model.o
 	@./$(MOBUILD_DIR)/$(M2)
 
 PHONY += $(M3)
-$(M3): $(MODELS_DIR)/$(M3)/main.o dimanet.o $(MODELS_DIR)/$(M3)/model.o
+$(M3): $(MOBUILD_DIR) $(MODELS_DIR)/$(M3)/main.o dimanet.o $(MODELS_DIR)/$(M3)/model.o
 	$(CC) $(CFLAGS) -o $(MOBUILD_DIR)/$(M3) $< dimanet.o $(MODELS_DIR)/$(M3)/model.o $(LDLIBS)
 	@echo ""
 	@echo "Successfully compiled '$(M3)'."
@@ -146,6 +143,7 @@ bclean:
 PHONY += clean
 clean:
 	$(RM) *.o
+	$(RM) *.a
 	$(RM) persist.txt
 	$(RM) main
 	$(RM) gen
@@ -154,6 +152,7 @@ clean:
 	$(RM) debug
 	$(RM) $(EXBUILD_DIR)/*.o
 	$(RM) $(MODELS_DIR)/*.o
+
 PHONY += start
 start:
 	@echo ""
@@ -175,11 +174,4 @@ help:
 	@echo "    build    | Compile dimanet"
 	@echo "    strings  | Compile stringslib"
 	@echo "    gen      | Compile gen"
-	@echo "    compile  | Build the main file"
-	@echo "    <model>  | Build the model, E.G: map, wheel, book"
-	@echo ""
-	@echo "  Documentation targets:"
-	@echo "    help     | A command for dummies"
-	@echo ""
-
-.PHONY: $(PHONY)
+	@echo "

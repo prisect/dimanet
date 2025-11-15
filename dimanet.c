@@ -1,8 +1,3 @@
-/* dimanet.c - main dimanet file
- *
- * License-Identifier: GPL-3.0
- * Latest updated version: v1.3 */
-
 #include "dimanet.h"
 
 #include <assert.h>
@@ -46,7 +41,7 @@ double lookup[LOOKUP_SIZE];
 #pragma warning(disable : 4996) /* For fscanf */
 #endif
 
-
+/* Existing activation functions */
 double dimanet_act_sigmoid(const dimanet *ann unused, double a) {
     if (a < -45.0) return 0;
     if (a > 45.0) return 1;
@@ -77,28 +72,35 @@ double dimanet_act_sigmoid_cached(const dimanet *ann unused, double a) {
     return lookup[j];
 }
 
-/* --- for zekiah, comment for everything
-
-Function: double dimanet_act_linear(const struct dimanet *ann unused, double a)
-Description: Linear activation function that simply returns the input value 'a' unchanged.
-Parameters:
-    - const struct dimanet *ann unused: Unused pointer to a dimanet structure.
-    - double a: Input value to the activation function.
-Returns:
-    - double: The input value 'a' unchanged. */
 double dimanet_act_linear(const struct dimanet *ann unused, double a) {
     return a;
 }
 
-/* Function: double dimanet_act_threshold(const struct dimanet *ann unused, double a)
-Description: Threshold activation function that returns 1 if the input 'a' is greater than 0, otherwise 0.
-Parameters:
-    - const struct dimanet *ann unused: Unused pointer to a dimanet structure.
-    - double a: Input value to the activation function.
-Returns:
-    - double: 1 if 'a' is greater than 0, 0 otherwise. */
 double dimanet_act_threshold(const struct dimanet *ann unused, double a) {
     return a > 0;
+}
+
+/* New modern activation functions */
+double dimanet_act_tanh(const dimanet *ann unused, double a) {
+    return tanh(a);
+}
+
+double dimanet_act_relu(const dimanet *ann unused, double a) {
+    return a > 0 ? a : 0;
+}
+
+double dimanet_act_leaky_relu(const dimanet *ann, double a) {
+    return a > 0 ? a : ann->leaky_relu_alpha * a;
+}
+
+/* Function to set activation functions */
+void dimanet_set_activation_functions(dimanet *ann, dimanet_actfun hidden, dimanet_actfun output) {
+    ann->activation_hidden = hidden;
+    ann->activation_output = output;
+}
+
+void dimanet_set_leaky_relu_alpha(dimanet *ann, double alpha) {
+    ann->leaky_relu_alpha = alpha;
 }
 
 dimanet *dimanet_init(int inputs, int hidden_layers, int hidden, int outputs) {
@@ -132,6 +134,9 @@ dimanet *dimanet_init(int inputs, int hidden_layers, int hidden, int outputs) {
     ret->output = ret->weight + ret->total_weights;
     ret->delta = ret->output + ret->total_neurons;
 
+    /* Default Leaky ReLU parameter */
+    ret->leaky_relu_alpha = 0.01;
+
     dimanet_randomize(ret);
 
     ret->activation_hidden = dimanet_act_sigmoid_cached;
@@ -141,8 +146,6 @@ dimanet *dimanet_init(int inputs, int hidden_layers, int hidden, int outputs) {
 
     return ret;
 }
-
-
 
 
 dimanet *dimanet_read(FILE *in) {
@@ -285,14 +288,41 @@ void dimanet_train(dimanet const *ann, double const *inputs, double const *desir
         double *d = ann->delta + ann->hidden * ann->hidden_layers; /* First delta. */
         double const *t = desired_outputs; /* First desired output. */
 
-
         /* Set output layer deltas. */
         if (dimanet_act_output == dimanet_act_linear ||
                 ann->activation_output == dimanet_act_linear) {
             for (j = 0; j < ann->outputs; ++j) {
                 *d++ = *t++ - *o++;
             }
+        } else if (ann->activation_output == dimanet_act_sigmoid_cached || 
+                   ann->activation_output == dimanet_act_sigmoid) {
+            /* Sigmoid derivative */
+            for (j = 0; j < ann->outputs; ++j) {
+                *d++ = (*t - *o) * *o * (1.0 - *o);
+                ++o; ++t;
+            }
+        } else if (ann->activation_output == dimanet_act_tanh) {
+            /* Tanh derivative: 1 - tanh^2(x) */
+            for (j = 0; j < ann->outputs; ++j) {
+                *d++ = (*t - *o) * (1.0 - *o * *o);
+                ++o; ++t;
+            }
+        } else if (ann->activation_output == dimanet_act_relu) {
+            /* ReLU derivative */
+            for (j = 0; j < ann->outputs; ++j) {
+                double derivative = (*o > 0) ? 1.0 : 0.0;
+                *d++ = (*t - *o) * derivative;
+                ++o; ++t;
+            }
+        } else if (ann->activation_output == dimanet_act_leaky_relu) {
+            /* Leaky ReLU derivative */
+            for (j = 0; j < ann->outputs; ++j) {
+                double derivative = (*o > 0) ? 1.0 : ann->leaky_relu_alpha;
+                *d++ = (*t - *o) * derivative;
+                ++o; ++t;
+            }
         } else {
+            /* Default to sigmoid derivative for unknown activation functions */
             for (j = 0; j < ann->outputs; ++j) {
                 *d++ = (*t - *o) * *o * (1.0 - *o);
                 ++o; ++t;
@@ -326,7 +356,23 @@ void dimanet_train(dimanet const *ann, double const *inputs, double const *desir
                 delta += forward_delta * forward_weight;
             }
 
-            *d = *o * (1.0-*o) * delta;
+            /* Calculate derivative based on activation function */
+            if (ann->activation_hidden == dimanet_act_sigmoid_cached || 
+                ann->activation_hidden == dimanet_act_sigmoid) {
+                *d = *o * (1.0-*o) * delta;
+            } else if (ann->activation_hidden == dimanet_act_tanh) {
+                *d = (1.0 - *o * *o) * delta;
+            } else if (ann->activation_hidden == dimanet_act_relu) {
+                double derivative = (*o > 0) ? 1.0 : 0.0;
+                *d = derivative * delta;
+            } else if (ann->activation_hidden == dimanet_act_leaky_relu) {
+                double derivative = (*o > 0) ? 1.0 : ann->leaky_relu_alpha;
+                *d = derivative * delta;
+            } else {
+                /* Default to sigmoid derivative */
+                *d = *o * (1.0-*o) * delta;
+            }
+            
             ++d; ++o;
         }
     }
