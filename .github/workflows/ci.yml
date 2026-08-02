@@ -1,0 +1,52 @@
+name: CI
+
+on:
+  push:
+    branches: [master, main]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: make
+          - name: cmake
+          - name: sanitizers
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build and test (make)
+        if: matrix.name == 'make'
+        run: |
+          make test
+          make examples
+
+      - name: Build and test (cmake)
+        if: matrix.name == 'cmake'
+        run: |
+          cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
+          cmake --build build --parallel
+          ctest --test-dir build --output-on-failure
+          cmake --install build --prefix "$PWD/install"
+
+      - name: Build and test (sanitizers)
+        if: matrix.name == 'sanitizers'
+        run: |
+          cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug \
+                -DCMAKE_C_FLAGS="-fsanitize=address,undefined -fno-omit-frame-pointer" \
+                -DCMAKE_EXE_LINKER_FLAGS="-fsanitize=address,undefined"
+          cmake --build build --parallel
+          ctest --test-dir build --output-on-failure
+
+      - name: Run examples (make)
+        if: matrix.name == 'make'
+        run: |
+          ./build/example_1 > /dev/null
+          ./build/example_2 > /dev/null
+          ./build/example_3 > /dev/null
+          ./build/example_4 > /dev/null
+          ./build/example_5 > /dev/null
